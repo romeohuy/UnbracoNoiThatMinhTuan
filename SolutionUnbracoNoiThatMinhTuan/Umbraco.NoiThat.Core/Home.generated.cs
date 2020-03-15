@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IHeaderControls, ISEocontrols
+	public partial class Home : PublishedContentModel, IFooterControls, IHeaderControls, ISEocontrols
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -107,6 +107,41 @@ namespace Umbraco.NoiThat.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("homeSlideImageTrueTitle")]
 		public string HomeSlideImageTrueTitle => this.Value<string>("homeSlideImageTrueTitle");
+
+		///<summary>
+		/// Footer Address
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerAddress")]
+		public string FooterAddress => FooterControls.GetFooterAddress(this);
+
+		///<summary>
+		/// Footer Company Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerCompanyEmail")]
+		public string FooterCompanyEmail => FooterControls.GetFooterCompanyEmail(this);
+
+		///<summary>
+		/// FooterCompanyName
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerCompanyName")]
+		public string FooterCompanyName => FooterControls.GetFooterCompanyName(this);
+
+		///<summary>
+		/// FooterCompanyPhone
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerCompanyPhone")]
+		public string FooterCompanyPhone => FooterControls.GetFooterCompanyPhone(this);
+
+		///<summary>
+		/// Social Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("socialLinks")]
+		public IEnumerable<Umbraco.Web.Models.Link> SocialLinks => FooterControls.GetSocialLinks(this);
 
 		///<summary>
 		/// Descriptions
