@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel
+	public partial class Home : PublishedContentModel, IHeaderControls, ISEocontrols
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -107,5 +107,40 @@ namespace Umbraco.NoiThat.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("homeSlideImageTrueTitle")]
 		public string HomeSlideImageTrueTitle => this.Value<string>("homeSlideImageTrueTitle");
+
+		///<summary>
+		/// Descriptions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("descriptions")]
+		public string Descriptions => HeaderControls.GetDescriptions(this);
+
+		///<summary>
+		/// TitlePage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("titlePage")]
+		public string TitlePage => HeaderControls.GetTitlePage(this);
+
+		///<summary>
+		/// MetaDescriptions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaDescriptions")]
+		public string MetaDescriptions => SEocontrols.GetMetaDescriptions(this);
+
+		///<summary>
+		/// MetaTags
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaTags")]
+		public string MetaTags => SEocontrols.GetMetaTags(this);
+
+		///<summary>
+		/// SEOTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("sEOTitle")]
+		public string SEotitle => SEocontrols.GetSEotitle(this);
 	}
 }
