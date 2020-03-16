@@ -1,8 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Home>
 @{
     Layout = "masterPage.cshtml";
-    Page.Title = Model.TitlePage;
-    Page.Description = Model.Descriptions;
 }
 
 <!-- SLIDER -->
@@ -12,7 +10,7 @@
             <!-- Slide 1 -->
             <li data-transition="random">
                 <!-- Main Image -->
-                <img src="@Model.HomeSlideImageOne.GetCropUrl()" alt="" data-bgposition="center center" data-no-retina>
+                <img src="#" alt="" data-bgposition="center center" data-no-retina>
 
                 <!-- Layers -->
                 <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 "
@@ -32,7 +30,7 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on">
-                    @Model.HomeSlideImageOneTitle
+                    @*@Model.HomeSlideImageOneTitle*@
                 </div>
 
                 <div class="tp-caption "
@@ -55,7 +53,7 @@
             </li>
             <!-- /End Slide 1 -->
             <!-- Slide 2 -->
-            <li data-transition="random">
+            @*<li data-transition="random">
                 <!-- Main Image -->
                 <img src="@Model.HomeSlideImageTrue.GetCropUrl()" alt="" data-bgposition="center center" data-no-retina>
 
@@ -141,7 +139,7 @@
                      data-responsive_offset="on">
                     <a href="#" class="themesflat-button bg-accent big"><span>GET IN TOUCH</span></a>
                 </div>
-            </li>
+            </li>*@
             <!-- /End Slide 3 -->
         </ul>
     </div>
@@ -149,7 +147,7 @@
 <!-- END SLIDER -->
 @* the fun starts here *@
 <!-- ABOUT -->
-<div class="row-about">
+@*<div class="row-about">
     <div class="container-fluid">
         <div class="row equalize sm-equalize-auto">
             <div class="col-md-6 half-background style-1" style="background-image: url('@Model.HomeAboutUsCoverImage.GetCropUrl()')">
@@ -172,5 +170,5 @@
             </div><!-- /.col-md-6 -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
-</div>
+</div>*@
 <!-- END ABOUT -->

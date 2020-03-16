@@ -20,34 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	// Mixin Content Type with alias "footerControls"
-	/// <summary>Footer Controls</summary>
-	public partial interface IFooterControls : IPublishedContent
-	{
-		/// <summary>Footer Address</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string FooterAddress { get; }
-
-		/// <summary>Footer Company Email</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string FooterCompanyEmail { get; }
-
-		/// <summary>FooterCompanyName</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string FooterCompanyName { get; }
-
-		/// <summary>FooterCompanyPhone</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string FooterCompanyPhone { get; }
-
-		/// <summary>Social Links</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IEnumerable<Umbraco.Web.Models.Link> SocialLinks { get; }
-	}
-
 	/// <summary>Footer Controls</summary>
 	[PublishedModel("footerControls")]
-	public partial class FooterControls : PublishedContentModel, IFooterControls
+	public partial class FooterControls : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -69,60 +44,5 @@ namespace Umbraco.NoiThat.Core
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Footer Address
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("footerAddress")]
-		public string FooterAddress => GetFooterAddress(this);
-
-		/// <summary>Static getter for Footer Address</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetFooterAddress(IFooterControls that) => that.Value<string>("footerAddress");
-
-		///<summary>
-		/// Footer Company Email
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("footerCompanyEmail")]
-		public string FooterCompanyEmail => GetFooterCompanyEmail(this);
-
-		/// <summary>Static getter for Footer Company Email</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetFooterCompanyEmail(IFooterControls that) => that.Value<string>("footerCompanyEmail");
-
-		///<summary>
-		/// FooterCompanyName
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("footerCompanyName")]
-		public string FooterCompanyName => GetFooterCompanyName(this);
-
-		/// <summary>Static getter for FooterCompanyName</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetFooterCompanyName(IFooterControls that) => that.Value<string>("footerCompanyName");
-
-		///<summary>
-		/// FooterCompanyPhone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("footerCompanyPhone")]
-		public string FooterCompanyPhone => GetFooterCompanyPhone(this);
-
-		/// <summary>Static getter for FooterCompanyPhone</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetFooterCompanyPhone(IFooterControls that) => that.Value<string>("footerCompanyPhone");
-
-		///<summary>
-		/// Social Links
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinks")]
-		public IEnumerable<Umbraco.Web.Models.Link> SocialLinks => GetSocialLinks(this);
-
-		/// <summary>Static getter for Social Links</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IEnumerable<Umbraco.Web.Models.Link> GetSocialLinks(IFooterControls that) => that.Value<IEnumerable<Umbraco.Web.Models.Link>>("socialLinks");
 	}
 }
