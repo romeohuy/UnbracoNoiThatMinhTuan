@@ -20,26 +20,51 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Contact</summary>
-	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel, IContactControl, IIconLinkItems, ITopBarHeaderControl
+	// Mixin Content Type with alias "contactControl"
+	/// <summary>Contact Control</summary>
+	public partial interface IContactControl : IPublishedContent
+	{
+		/// <summary>Contact Phone</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string ContactPhone { get; }
+
+		/// <summary>Message</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string Message { get; }
+
+		/// <summary>SubHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string SubHeading { get; }
+
+		/// <summary>Subject</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string Subject { get; }
+
+		/// <summary>UserName</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string UserName { get; }
+	}
+
+	/// <summary>Contact Control</summary>
+	[PublishedModel("contactControl")]
+	public partial class ContactControl : PublishedContentModel, IContactControl
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "contact";
+		public new const string ModelTypeAlias = "contactControl";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Contact, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactControl, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Contact(IPublishedContent content)
+		public ContactControl(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -50,76 +75,54 @@ namespace Umbraco.NoiThat.Core
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("contactPhone")]
-		public string ContactPhone => ContactControl.GetContactPhone(this);
+		public string ContactPhone => GetContactPhone(this);
+
+		/// <summary>Static getter for Contact Phone</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetContactPhone(IContactControl that) => that.Value<string>("contactPhone");
 
 		///<summary>
 		/// Message
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("message")]
-		public string Message => ContactControl.GetMessage(this);
+		public string Message => GetMessage(this);
+
+		/// <summary>Static getter for Message</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetMessage(IContactControl that) => that.Value<string>("message");
 
 		///<summary>
 		/// SubHeading
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("subHeading")]
-		public string SubHeading => ContactControl.GetSubHeading(this);
+		public string SubHeading => GetSubHeading(this);
+
+		/// <summary>Static getter for SubHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetSubHeading(IContactControl that) => that.Value<string>("subHeading");
 
 		///<summary>
 		/// Subject
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("subject")]
-		public string Subject => ContactControl.GetSubject(this);
+		public string Subject => GetSubject(this);
+
+		/// <summary>Static getter for Subject</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetSubject(IContactControl that) => that.Value<string>("subject");
 
 		///<summary>
 		/// UserName
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("userName")]
-		public string UserName => ContactControl.GetUserName(this);
+		public string UserName => GetUserName(this);
 
-		///<summary>
-		/// Icon Class
-		///</summary>
+		/// <summary>Static getter for UserName</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("iconClass")]
-		public string IconClass => IconLinkItems.GetIconClass(this);
-
-		///<summary>
-		/// Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("link")]
-		public Umbraco.Web.Models.Link Link => IconLinkItems.GetLink(this);
-
-		///<summary>
-		/// Address
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("address")]
-		public string Address => TopBarHeaderControl.GetAddress(this);
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("phone")]
-		public string Phone => TopBarHeaderControl.GetPhone(this);
-
-		///<summary>
-		/// Social Link List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinkList")]
-		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
-
-		///<summary>
-		/// Times
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("times")]
-		public string Times => TopBarHeaderControl.GetTimes(this);
+		public static string GetUserName(IContactControl that) => that.Value<string>("userName");
 	}
 }
