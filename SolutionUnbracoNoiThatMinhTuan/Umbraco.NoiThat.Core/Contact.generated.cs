@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>Contact</summary>
 	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel
+	public partial class Contact : PublishedContentModel, IContactControl, IIconLinkItems, ITopBarHeaderControl
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,5 +44,82 @@ namespace Umbraco.NoiThat.Core
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Contact Phone
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("contactPhone")]
+		public string ContactPhone => ContactControl.GetContactPhone(this);
+
+		///<summary>
+		/// Message
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("message")]
+		public string Message => ContactControl.GetMessage(this);
+
+		///<summary>
+		/// SubHeading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("subHeading")]
+		public string SubHeading => ContactControl.GetSubHeading(this);
+
+		///<summary>
+		/// Subject
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("subject")]
+		public string Subject => ContactControl.GetSubject(this);
+
+		///<summary>
+		/// UserName
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("userName")]
+		public string UserName => ContactControl.GetUserName(this);
+
+		///<summary>
+		/// Icon Class
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("iconClass")]
+		public string IconClass => IconLinkItems.GetIconClass(this);
+
+		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("link")]
+		public Umbraco.Web.Models.Link Link => IconLinkItems.GetLink(this);
+
+		///<summary>
+		/// Address
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("address")]
+		public string Address => TopBarHeaderControl.GetAddress(this);
+
+		///<summary>
+		/// Phone
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("phone")]
+		public string Phone => TopBarHeaderControl.GetPhone(this);
+
+		///<summary>
+		/// Social Link List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("socialLinkList")]
+		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
+
+		///<summary>
+		/// Times
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("times")]
+		public string Times => TopBarHeaderControl.GetTimes(this);
 	}
 }

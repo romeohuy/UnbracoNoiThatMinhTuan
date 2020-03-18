@@ -20,9 +20,22 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
+	// Mixin Content Type with alias "iconLinkItems"
+	/// <summary>Icon Link Items</summary>
+	public partial interface IIconLinkItems : IPublishedElement
+	{
+		/// <summary>Icon Class</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string IconClass { get; }
+
+		/// <summary>Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		Umbraco.Web.Models.Link Link { get; }
+	}
+
 	/// <summary>Icon Link Items</summary>
 	[PublishedModel("iconLinkItems")]
-	public partial class IconLinkItems : PublishedElementModel
+	public partial class IconLinkItems : PublishedElementModel, IIconLinkItems
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,13 +63,21 @@ namespace Umbraco.NoiThat.Core
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("iconClass")]
-		public string IconClass => this.Value<string>("iconClass");
+		public string IconClass => GetIconClass(this);
+
+		/// <summary>Static getter for Icon Class</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetIconClass(IIconLinkItems that) => that.Value<string>("iconClass");
 
 		///<summary>
 		/// Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("link")]
-		public Umbraco.Web.Models.Link Link => this.Value<Umbraco.Web.Models.Link>("link");
+		public Umbraco.Web.Models.Link Link => GetLink(this);
+
+		/// <summary>Static getter for Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static Umbraco.Web.Models.Link GetLink(IIconLinkItems that) => that.Value<Umbraco.Web.Models.Link>("link");
 	}
 }
