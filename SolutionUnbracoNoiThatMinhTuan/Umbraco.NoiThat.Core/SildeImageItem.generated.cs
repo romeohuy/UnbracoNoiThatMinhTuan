@@ -20,64 +20,57 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IHomeMainSlideImage, ITopBarHeaderControl
+	/// <summary>Silde Image Item</summary>
+	[PublishedModel("sildeImageItem")]
+	public partial class SildeImageItem : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "sildeImageItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SildeImageItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public SildeImageItem(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// HomeMainSlide
+		/// Slide Image Url
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("homeMainSlide")]
-		public IEnumerable<SildeImageItem> HomeMainSlide => HomeMainSlideImage.GetHomeMainSlide(this);
+		[ImplementPropertyType("slideImageUrl")]
+		public IPublishedContent SlideImageUrl => this.Value<IPublishedContent>("slideImageUrl");
 
 		///<summary>
-		/// Address
+		/// Slide Link To Url
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("address")]
-		public string Address => TopBarHeaderControl.GetAddress(this);
+		[ImplementPropertyType("slideLinkToUrl")]
+		public Umbraco.Web.Models.Link SlideLinkToUrl => this.Value<Umbraco.Web.Models.Link>("slideLinkToUrl");
 
 		///<summary>
-		/// Phone
+		/// Slide Short Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("phone")]
-		public string Phone => TopBarHeaderControl.GetPhone(this);
+		[ImplementPropertyType("slideShortContent")]
+		public string SlideShortContent => this.Value<string>("slideShortContent");
 
 		///<summary>
-		/// Social Link List
+		/// Slide Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinkList")]
-		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
-
-		///<summary>
-		/// Times
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("times")]
-		public string Times => TopBarHeaderControl.GetTimes(this);
+		[ImplementPropertyType("slideTitle")]
+		public string SlideTitle => this.Value<string>("slideTitle");
 	}
 }
