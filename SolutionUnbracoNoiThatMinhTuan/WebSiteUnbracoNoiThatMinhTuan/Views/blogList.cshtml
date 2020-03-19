@@ -1,7 +1,13 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@using Umbraco.NoiThat.Core
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Blogs>
 @{
 	Layout = "masterPage.cshtml";
 }
 
 @* the fun starts here *@
+@foreach (var item in Model.Children())
+{
+    var blogDetail = (Blog) item;
+    <div>@blogDetail.Name</div><br/>
+}
 

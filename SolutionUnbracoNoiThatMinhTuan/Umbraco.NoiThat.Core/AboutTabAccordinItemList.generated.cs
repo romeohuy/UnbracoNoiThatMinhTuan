@@ -20,71 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IFeatureServicesControls, IHomeMainSlideImage, ITopBarHeaderControl
+	/// <summary>About Tab Accordin Item List</summary>
+	[PublishedModel("aboutTabAccordinItemList")]
+	public partial class AboutTabAccordinItemList : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "aboutTabAccordinItemList";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutTabAccordinItemList, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public AboutTabAccordinItemList(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Feature Service List
+		/// TabAccordinItemHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("featureServiceList")]
-		public IPublishedContent FeatureServiceList => FeatureServicesControls.GetFeatureServiceList(this);
+		[ImplementPropertyType("tabAccordinItemHead")]
+		public string TabAccordinItemHead => this.Value<string>("tabAccordinItemHead");
 
 		///<summary>
-		/// HomeMainSlide
+		/// TabAccordinItemSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("homeMainSlide")]
-		public IEnumerable<SildeImageItem> HomeMainSlide => HomeMainSlideImage.GetHomeMainSlide(this);
-
-		///<summary>
-		/// Address
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("address")]
-		public string Address => TopBarHeaderControl.GetAddress(this);
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("phone")]
-		public string Phone => TopBarHeaderControl.GetPhone(this);
-
-		///<summary>
-		/// Social Link List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinkList")]
-		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
-
-		///<summary>
-		/// Times
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("times")]
-		public string Times => TopBarHeaderControl.GetTimes(this);
+		[ImplementPropertyType("tabAccordinItemSub")]
+		public string TabAccordinItemSub => this.Value<string>("tabAccordinItemSub");
 	}
 }

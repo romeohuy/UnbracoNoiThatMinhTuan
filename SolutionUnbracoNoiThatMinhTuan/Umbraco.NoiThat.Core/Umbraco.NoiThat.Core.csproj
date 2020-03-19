@@ -374,7 +374,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutTabAccordinItemList.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutTabItemList.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutTeamList.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="AboutUs.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsControls.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsIcoinList.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsThemeslatList.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Blog.generated.cs">
@@ -396,6 +414,9 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="FeaturedTitleControls.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureServicesControls.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="File.generated.cs">

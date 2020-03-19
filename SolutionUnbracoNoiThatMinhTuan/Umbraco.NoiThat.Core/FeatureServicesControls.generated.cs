@@ -20,26 +20,35 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IFeatureServicesControls, IHomeMainSlideImage, ITopBarHeaderControl
+	// Mixin Content Type with alias "featureServicesControls"
+	/// <summary>Feature Services Controls</summary>
+	public partial interface IFeatureServicesControls : IPublishedContent
+	{
+		/// <summary>Feature Service List</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IPublishedContent FeatureServiceList { get; }
+	}
+
+	/// <summary>Feature Services Controls</summary>
+	[PublishedModel("featureServicesControls")]
+	public partial class FeatureServicesControls : PublishedContentModel, IFeatureServicesControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "featureServicesControls";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FeatureServicesControls, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public FeatureServicesControls(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -50,41 +59,10 @@ namespace Umbraco.NoiThat.Core
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("featureServiceList")]
-		public IPublishedContent FeatureServiceList => FeatureServicesControls.GetFeatureServiceList(this);
+		public IPublishedContent FeatureServiceList => GetFeatureServiceList(this);
 
-		///<summary>
-		/// HomeMainSlide
-		///</summary>
+		/// <summary>Static getter for Feature Service List</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("homeMainSlide")]
-		public IEnumerable<SildeImageItem> HomeMainSlide => HomeMainSlideImage.GetHomeMainSlide(this);
-
-		///<summary>
-		/// Address
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("address")]
-		public string Address => TopBarHeaderControl.GetAddress(this);
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("phone")]
-		public string Phone => TopBarHeaderControl.GetPhone(this);
-
-		///<summary>
-		/// Social Link List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinkList")]
-		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
-
-		///<summary>
-		/// Times
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("times")]
-		public string Times => TopBarHeaderControl.GetTimes(this);
+		public static IPublishedContent GetFeatureServiceList(IFeatureServicesControls that) => that.Value<IPublishedContent>("featureServiceList");
 	}
 }

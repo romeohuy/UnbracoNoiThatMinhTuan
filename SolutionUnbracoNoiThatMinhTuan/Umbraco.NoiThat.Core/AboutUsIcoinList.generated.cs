@@ -20,71 +20,50 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IFeatureServicesControls, IHomeMainSlideImage, ITopBarHeaderControl
+	/// <summary>About us Icoin List</summary>
+	[PublishedModel("aboutUsIcoinList")]
+	public partial class AboutUsIcoinList : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "aboutUsIcoinList";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsIcoinList, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public AboutUsIcoinList(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Feature Service List
+		/// AboutUsIconHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("featureServiceList")]
-		public IPublishedContent FeatureServiceList => FeatureServicesControls.GetFeatureServiceList(this);
+		[ImplementPropertyType("aboutUsIconHead")]
+		public string AboutUsIconHead => this.Value<string>("aboutUsIconHead");
 
 		///<summary>
-		/// HomeMainSlide
+		/// AboutUsIconSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("homeMainSlide")]
-		public IEnumerable<SildeImageItem> HomeMainSlide => HomeMainSlideImage.GetHomeMainSlide(this);
+		[ImplementPropertyType("aboutUsIconSub")]
+		public string AboutUsIconSub => this.Value<string>("aboutUsIconSub");
 
 		///<summary>
-		/// Address
+		/// AboutUsIconUrl
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("address")]
-		public string Address => TopBarHeaderControl.GetAddress(this);
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("phone")]
-		public string Phone => TopBarHeaderControl.GetPhone(this);
-
-		///<summary>
-		/// Social Link List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinkList")]
-		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
-
-		///<summary>
-		/// Times
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("times")]
-		public string Times => TopBarHeaderControl.GetTimes(this);
+		[ImplementPropertyType("aboutUsIconUrl")]
+		public Umbraco.Web.Models.Link AboutUsIconUrl => this.Value<Umbraco.Web.Models.Link>("aboutUsIconUrl");
 	}
 }
