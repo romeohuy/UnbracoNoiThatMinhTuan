@@ -20,57 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Services</summary>
-	[PublishedModel("services")]
-	public partial class Services : PublishedContentModel, IServiceImageItem
+	// Mixin Content Type with alias "featureServicesControls"
+	/// <summary>Feature Services Controls</summary>
+	public partial interface IFeatureServicesControls : IPublishedContent
+	{
+		/// <summary>Feature Service ContentList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<FeatureServiceContentItem> FeatureServiceContentList { get; }
+	}
+
+	/// <summary>Feature Services Controls</summary>
+	[PublishedModel("featureServicesControls")]
+	public partial class FeatureServicesControls : PublishedContentModel, IFeatureServicesControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "services";
+		public new const string ModelTypeAlias = "featureServicesControls";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Services, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FeatureServicesControls, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Services(IPublishedContent content)
+		public FeatureServicesControls(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Image Decription
+		/// Feature Service ContentList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageDecription")]
-		public string ImageDecription => ServiceImageItem.GetImageDecription(this);
+		[ImplementPropertyType("featureServiceContentList")]
+		public IEnumerable<FeatureServiceContentItem> FeatureServiceContentList => GetFeatureServiceContentList(this);
 
-		///<summary>
-		/// Image Header
-		///</summary>
+		/// <summary>Static getter for Feature Service ContentList</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public string ImageHeader => ServiceImageItem.GetImageHeader(this);
-
-		///<summary>
-		/// Image Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageLink")]
-		public Umbraco.Web.Models.Link ImageLink => ServiceImageItem.GetImageLink(this);
-
-		///<summary>
-		/// Image Source
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageSource")]
-		public IPublishedContent ImageSource => ServiceImageItem.GetImageSource(this);
+		public static IEnumerable<FeatureServiceContentItem> GetFeatureServiceContentList(IFeatureServicesControls that) => that.Value<IEnumerable<FeatureServiceContentItem>>("featureServiceContentList");
 	}
 }

@@ -20,57 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Services</summary>
-	[PublishedModel("services")]
-	public partial class Services : PublishedContentModel, IServiceImageItem
+	// Mixin Content Type with alias "projectCategoriesList"
+	/// <summary>Project Categories List</summary>
+	public partial interface IProjectCategoriesList : IPublishedContent
+	{
+		/// <summary>categoriesDropdownList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<string> CategoriesDropdownList { get; }
+	}
+
+	/// <summary>Project Categories List</summary>
+	[PublishedModel("projectCategoriesList")]
+	public partial class ProjectCategoriesList : PublishedContentModel, IProjectCategoriesList
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "services";
+		public new const string ModelTypeAlias = "projectCategoriesList";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Services, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ProjectCategoriesList, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Services(IPublishedContent content)
+		public ProjectCategoriesList(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Image Decription
+		/// categoriesDropdownList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageDecription")]
-		public string ImageDecription => ServiceImageItem.GetImageDecription(this);
+		[ImplementPropertyType("categoriesDropdownList")]
+		public IEnumerable<string> CategoriesDropdownList => GetCategoriesDropdownList(this);
 
-		///<summary>
-		/// Image Header
-		///</summary>
+		/// <summary>Static getter for categoriesDropdownList</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public string ImageHeader => ServiceImageItem.GetImageHeader(this);
-
-		///<summary>
-		/// Image Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageLink")]
-		public Umbraco.Web.Models.Link ImageLink => ServiceImageItem.GetImageLink(this);
-
-		///<summary>
-		/// Image Source
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageSource")]
-		public IPublishedContent ImageSource => ServiceImageItem.GetImageSource(this);
+		public static IEnumerable<string> GetCategoriesDropdownList(IProjectCategoriesList that) => that.Value<IEnumerable<string>>("categoriesDropdownList");
 	}
 }

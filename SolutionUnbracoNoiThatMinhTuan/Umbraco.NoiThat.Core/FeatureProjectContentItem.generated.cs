@@ -20,57 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Services</summary>
-	[PublishedModel("services")]
-	public partial class Services : PublishedContentModel, IServiceImageItem
+	/// <summary>Feature Project Content Item</summary>
+	[PublishedModel("featureProjectContentItem")]
+	public partial class FeatureProjectContentItem : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "services";
+		public new const string ModelTypeAlias = "featureProjectContentItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Services, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FeatureProjectContentItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Services(IPublishedContent content)
+		public FeatureProjectContentItem(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Image Decription
+		/// Feature Project ContentSelected
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageDecription")]
-		public string ImageDecription => ServiceImageItem.GetImageDecription(this);
-
-		///<summary>
-		/// Image Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public string ImageHeader => ServiceImageItem.GetImageHeader(this);
-
-		///<summary>
-		/// Image Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageLink")]
-		public Umbraco.Web.Models.Link ImageLink => ServiceImageItem.GetImageLink(this);
-
-		///<summary>
-		/// Image Source
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageSource")]
-		public IPublishedContent ImageSource => ServiceImageItem.GetImageSource(this);
+		[ImplementPropertyType("featureProjectContentSelected")]
+		public IPublishedContent FeatureProjectContentSelected => this.Value<IPublishedContent>("featureProjectContentSelected");
 	}
 }

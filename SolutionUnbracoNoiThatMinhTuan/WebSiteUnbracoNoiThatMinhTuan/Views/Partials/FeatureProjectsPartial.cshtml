@@ -1,0 +1,69 @@
+﻿
+@using System.Collections
+@using Umbraco.NoiThat.Core
+@using Umbraco.NoiThat.Core.Helpers
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<FeatureProjectContentItem>>
+
+<!-- PROJECT -->
+<div class="row-project clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
+                <div class="position-relative">
+                    <div class="themesflat-headings style-1 clearfix">
+                        <h2 class="heading ">DỰ ÁN ĐÃ THỰC HIỆN</h2>
+                    </div>
+                    <ul class="themesflat-filter style-1 filter-absolute clearfix">
+                        
+                        <li class="active"><a href="#" data-filter="*">All</a></li>
+                        @{
+
+                            var categories = Model.Select(_ => (ProjectDetail)_.FeatureProjectContentSelected).Select(s=>s.CategoriesDropdownList.FirstOrDefault()).OrderBy(_=>_).Distinct();
+                            foreach (var category in categories)
+                            {
+                                <li><a href="#" data-filter=".@StringHelpers.RemoveSign4VietnameseString(category)">@category</a></li>
+                            }
+                        }
+
+                    </ul>
+                </div>
+                <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
+                <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
+                    @foreach (var item in Model.Select(_=>_.FeatureProjectContentSelected))
+                    {
+                        if (item is ProjectDetail projectDetail)
+                        {
+                            <div class="project-item @StringHelpers.RemoveSign4VietnameseString(projectDetail.CategoriesDropdownList.First()) villa">
+                                <div class="inner">
+                                    <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
+                                        <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                        <div class="elm-link">
+                                            @*<a href="#" class="icon-1 icon-search"></a>*@
+                                            <a href="#" class="icon-1"></a>
+                                        </div>
+                                        <div class="overlay-effect bg-color-3"></div>
+                                    </div>
+                                    <div class="text-wrap">
+                                        <h5 class="heading"><a href="#">@projectDetail.PageTitle</a></h5>
+                                        <div class="elm-meta">
+                                            @foreach (var tag in projectDetail.MetaKeywords)
+                                            {
+                                                <span><a href="#">@tag</a></span>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.product-item -->
+                        }
+                        
+                    }
+                </div><!-- /.themesflat-project -->
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- END PROJECT -->
+
+
+

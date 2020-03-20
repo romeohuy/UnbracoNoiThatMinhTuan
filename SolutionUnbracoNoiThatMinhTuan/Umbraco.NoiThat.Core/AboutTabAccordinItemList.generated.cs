@@ -20,57 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Services</summary>
-	[PublishedModel("services")]
-	public partial class Services : PublishedContentModel, IServiceImageItem
+	/// <summary>About Tab Accordin Item List</summary>
+	[PublishedModel("aboutTabAccordinItemList")]
+	public partial class AboutTabAccordinItemList : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "services";
+		public new const string ModelTypeAlias = "aboutTabAccordinItemList";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Services, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutTabAccordinItemList, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Services(IPublishedContent content)
+		public AboutTabAccordinItemList(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Image Decription
+		/// TabAccordinItemHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageDecription")]
-		public string ImageDecription => ServiceImageItem.GetImageDecription(this);
+		[ImplementPropertyType("tabAccordinItemHead")]
+		public string TabAccordinItemHead => this.Value<string>("tabAccordinItemHead");
 
 		///<summary>
-		/// Image Header
+		/// TabAccordinItemSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public string ImageHeader => ServiceImageItem.GetImageHeader(this);
-
-		///<summary>
-		/// Image Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageLink")]
-		public Umbraco.Web.Models.Link ImageLink => ServiceImageItem.GetImageLink(this);
-
-		///<summary>
-		/// Image Source
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageSource")]
-		public IPublishedContent ImageSource => ServiceImageItem.GetImageSource(this);
+		[ImplementPropertyType("tabAccordinItemSub")]
+		public string TabAccordinItemSub => this.Value<string>("tabAccordinItemSub");
 	}
 }

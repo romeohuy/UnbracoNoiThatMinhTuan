@@ -20,78 +20,79 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IFeatureProjectsControls, IFeatureServicesControls, IHomeMainSlideImage, ITopBarHeaderControl
+	// Mixin Content Type with alias "generalControls"
+	/// <summary>General Controls</summary>
+	public partial interface IGeneralControls : IPublishedContent
+	{
+		/// <summary>PageMainImage</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IPublishedContent PageMainImage { get; }
+
+		/// <summary>Page Short Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IHtmlString PageShortContent { get; }
+
+		/// <summary>PageTitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string PageTitle { get; }
+	}
+
+	/// <summary>General Controls</summary>
+	[PublishedModel("generalControls")]
+	public partial class GeneralControls : PublishedContentModel, IGeneralControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "generalControls";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GeneralControls, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public GeneralControls(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// FeatureProjectContentList
+		/// PageMainImage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("featureProjectContentList")]
-		public IEnumerable<FeatureProjectContentItem> FeatureProjectContentList => FeatureProjectsControls.GetFeatureProjectContentList(this);
+		[ImplementPropertyType("pageMainImage")]
+		public IPublishedContent PageMainImage => GetPageMainImage(this);
+
+		/// <summary>Static getter for PageMainImage</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedContent GetPageMainImage(IGeneralControls that) => that.Value<IPublishedContent>("pageMainImage");
 
 		///<summary>
-		/// Feature Service ContentList
+		/// Page Short Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("featureServiceContentList")]
-		public IEnumerable<FeatureServiceContentItem> FeatureServiceContentList => FeatureServicesControls.GetFeatureServiceContentList(this);
+		[ImplementPropertyType("pageShortContent")]
+		public IHtmlString PageShortContent => GetPageShortContent(this);
+
+		/// <summary>Static getter for Page Short Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IHtmlString GetPageShortContent(IGeneralControls that) => that.Value<IHtmlString>("pageShortContent");
 
 		///<summary>
-		/// HomeMainSlide
+		/// PageTitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("homeMainSlide")]
-		public IEnumerable<SildeImageItem> HomeMainSlide => HomeMainSlideImage.GetHomeMainSlide(this);
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => GetPageTitle(this);
 
-		///<summary>
-		/// Address
-		///</summary>
+		/// <summary>Static getter for PageTitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("address")]
-		public string Address => TopBarHeaderControl.GetAddress(this);
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("phone")]
-		public string Phone => TopBarHeaderControl.GetPhone(this);
-
-		///<summary>
-		/// Social Link List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("socialLinkList")]
-		public IEnumerable<IconLinkItems> SocialLinkList => TopBarHeaderControl.GetSocialLinkList(this);
-
-		///<summary>
-		/// Times
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("times")]
-		public string Times => TopBarHeaderControl.GetTimes(this);
+		public static string GetPageTitle(IGeneralControls that) => that.Value<string>("pageTitle");
 	}
 }

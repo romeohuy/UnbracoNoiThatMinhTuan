@@ -20,57 +20,50 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Services</summary>
-	[PublishedModel("services")]
-	public partial class Services : PublishedContentModel, IServiceImageItem
+	/// <summary>About us Icoin List</summary>
+	[PublishedModel("aboutUsIcoinList")]
+	public partial class AboutUsIcoinList : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "services";
+		public new const string ModelTypeAlias = "aboutUsIcoinList";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Services, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsIcoinList, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Services(IPublishedContent content)
+		public AboutUsIcoinList(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Image Decription
+		/// AboutUsIconHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageDecription")]
-		public string ImageDecription => ServiceImageItem.GetImageDecription(this);
+		[ImplementPropertyType("aboutUsIconHead")]
+		public string AboutUsIconHead => this.Value<string>("aboutUsIconHead");
 
 		///<summary>
-		/// Image Header
+		/// AboutUsIconSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public string ImageHeader => ServiceImageItem.GetImageHeader(this);
+		[ImplementPropertyType("aboutUsIconSub")]
+		public string AboutUsIconSub => this.Value<string>("aboutUsIconSub");
 
 		///<summary>
-		/// Image Link
+		/// AboutUsIconUrl
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageLink")]
-		public Umbraco.Web.Models.Link ImageLink => ServiceImageItem.GetImageLink(this);
-
-		///<summary>
-		/// Image Source
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageSource")]
-		public IPublishedContent ImageSource => ServiceImageItem.GetImageSource(this);
+		[ImplementPropertyType("aboutUsIconUrl")]
+		public Umbraco.Web.Models.Link AboutUsIconUrl => this.Value<Umbraco.Web.Models.Link>("aboutUsIconUrl");
 	}
 }

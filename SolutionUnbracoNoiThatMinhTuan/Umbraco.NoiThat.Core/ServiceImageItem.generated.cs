@@ -20,79 +20,94 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	// Mixin Content Type with alias "sEOControls"
-	/// <summary>SEO Controls</summary>
-	public partial interface ISEocontrols : IPublishedContent
+	// Mixin Content Type with alias "serviceImageItem"
+	/// <summary>Service Image Item</summary>
+	public partial interface IServiceImageItem : IPublishedElement
 	{
-		/// <summary>Meta Description</summary>
+		/// <summary>Image Decription</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string MetaDescription { get; }
+		string ImageDecription { get; }
 
-		/// <summary>Meta Keywords</summary>
+		/// <summary>Image Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IEnumerable<string> MetaKeywords { get; }
+		string ImageHeader { get; }
 
-		/// <summary>Meta Name</summary>
+		/// <summary>Image Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string MetaName { get; }
+		Umbraco.Web.Models.Link ImageLink { get; }
+
+		/// <summary>Image Source</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IPublishedContent ImageSource { get; }
 	}
 
-	/// <summary>SEO Controls</summary>
-	[PublishedModel("sEOControls")]
-	public partial class SEocontrols : PublishedContentModel, ISEocontrols
+	/// <summary>Service Image Item</summary>
+	[PublishedModel("serviceImageItem")]
+	public partial class ServiceImageItem : PublishedElementModel, IServiceImageItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "sEOControls";
+		public new const string ModelTypeAlias = "serviceImageItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SEocontrols, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ServiceImageItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public SEocontrols(IPublishedContent content)
+		public ServiceImageItem(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Meta Description
+		/// Image Decription
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("metaDescription")]
-		public string MetaDescription => GetMetaDescription(this);
+		[ImplementPropertyType("imageDecription")]
+		public string ImageDecription => GetImageDecription(this);
 
-		/// <summary>Static getter for Meta Description</summary>
+		/// <summary>Static getter for Image Decription</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetMetaDescription(ISEocontrols that) => that.Value<string>("metaDescription");
+		public static string GetImageDecription(IServiceImageItem that) => that.Value<string>("imageDecription");
 
 		///<summary>
-		/// Meta Keywords
+		/// Image Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("metaKeywords")]
-		public IEnumerable<string> MetaKeywords => GetMetaKeywords(this);
+		[ImplementPropertyType("imageHeader")]
+		public string ImageHeader => GetImageHeader(this);
 
-		/// <summary>Static getter for Meta Keywords</summary>
+		/// <summary>Static getter for Image Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IEnumerable<string> GetMetaKeywords(ISEocontrols that) => that.Value<IEnumerable<string>>("metaKeywords");
+		public static string GetImageHeader(IServiceImageItem that) => that.Value<string>("imageHeader");
 
 		///<summary>
-		/// Meta Name
+		/// Image Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("metaName")]
-		public string MetaName => GetMetaName(this);
+		[ImplementPropertyType("imageLink")]
+		public Umbraco.Web.Models.Link ImageLink => GetImageLink(this);
 
-		/// <summary>Static getter for Meta Name</summary>
+		/// <summary>Static getter for Image Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetMetaName(ISEocontrols that) => that.Value<string>("metaName");
+		public static Umbraco.Web.Models.Link GetImageLink(IServiceImageItem that) => that.Value<Umbraco.Web.Models.Link>("imageLink");
+
+		///<summary>
+		/// Image Source
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("imageSource")]
+		public IPublishedContent ImageSource => GetImageSource(this);
+
+		/// <summary>Static getter for Image Source</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedContent GetImageSource(IServiceImageItem that) => that.Value<IPublishedContent>("imageSource");
 	}
 }
