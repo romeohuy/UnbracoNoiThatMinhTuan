@@ -1,7 +1,81 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@using Umbraco.NoiThat.Core
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Services>
 @{
-	Layout = "masterPage.cshtml";
+    Layout = "masterPage.cshtml";
 }
 
 @* the fun starts here *@
+@{
+    var serviceDetails = Model.Children.Cast<ServiceDetail>();
+}
 
+@section FeaturedTitleBlock{
+    <!-- Featured Title -->
+    <div id="featured-title" class="featured-title clearfix">
+        <div id="featured-title-inner" class="container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="~/" class="trail-begin">Home</a>
+                            <span class="sep">|</span>
+                            <span class="trail-end">Dịch vụ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-title-heading-wrap">
+                    <h1 class="feautured-title-heading">
+                        Dịch vụ
+                    </h1>
+                </div>
+            </div><!-- /.featured-title-inner-wrap -->
+        </div><!-- /#featured-title-inner -->
+    </div>
+    <!-- End Featured Title -->
+}
+
+<!-- SERVICES -->
+<div class="row-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60"></div>
+                @*<ul class="themesflat-filter style-1 clearfix">
+                        <li class="active"><a href="#" data-filter="*">All</a></li>
+                        <li><a href="#" data-filter=".green">GREEN HOUSE</a></li>
+                        <li><a href="#" data-filter=".architecture">ARCHITECTURE   </a></li>
+                        <li><a href="#" data-filter=".construction">CONSTRUCTION </a></li>
+                        <li><a href="#" data-filter=".villa">VILLA</a></li>
+                        <li><a href="#" data-filter=".building">BUILDING</a></li>
+                    </ul>*@
+                <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
+                <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
+                    @foreach (var serviceDetail in serviceDetails)
+                    {
+                        <div class="project-item villa green">
+                            <div class="inner">
+                                <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
+                                    <img src="@serviceDetail.PageMainImage.Url" alt="@serviceDetail.PageTitle">
+                                    <div class="elm-link">
+                                        <a href="@serviceDetail.Url" class="icon-1"></a>
+                                    </div>
+                                    <div class="overlay-effect bg-color-3"></div>
+                                </div>
+                                <div class="text-wrap">
+                                    <h5 class="heading"><a href="@serviceDetail.Url">@serviceDetail.PageTitle</a></h5>
+                                    <p>@serviceDetail.PageShortContent</p>
+                                    <div class="elm-readmore">
+                                        <a href="@serviceDetail.Url">CHI TIẾT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.product-item -->
+                    }
+                </div><!-- /.themesflat-project -->
+
+                <div class="themesflat-spacer clearfix" data-desktop="72" data-mobile="60" data-smobile="60"></div>
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+<!-- END SERVICES -->
