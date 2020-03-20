@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>Project Detail</summary>
 	[PublishedModel("projectDetail")]
-	public partial class ProjectDetail : PublishedContentModel
+	public partial class ProjectDetail : PublishedContentModel, IGeneralControls, IGeneralSlideImage, IProjectCategoriesList, ISEocontrols
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,5 +44,61 @@ namespace Umbraco.NoiThat.Core
 		{ }
 
 		// properties
+
+		///<summary>
+		/// PageMainImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainImage")]
+		public IPublishedContent PageMainImage => GeneralControls.GetPageMainImage(this);
+
+		///<summary>
+		/// Page Short Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageShortContent")]
+		public IHtmlString PageShortContent => GeneralControls.GetPageShortContent(this);
+
+		///<summary>
+		/// PageTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => GeneralControls.GetPageTitle(this);
+
+		///<summary>
+		/// General Slide List Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("generalSlideListImage")]
+		public IEnumerable<SildeImageItem> GeneralSlideListImage => GeneralSlideImage.GetGeneralSlideListImage(this);
+
+		///<summary>
+		/// categoriesDropdownList
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("categoriesDropdownList")]
+		public IEnumerable<string> CategoriesDropdownList => ProjectCategoriesList.GetCategoriesDropdownList(this);
+
+		///<summary>
+		/// Meta Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription => SEocontrols.GetMetaDescription(this);
+
+		///<summary>
+		/// Meta Keywords
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaKeywords")]
+		public IEnumerable<string> MetaKeywords => SEocontrols.GetMetaKeywords(this);
+
+		///<summary>
+		/// Meta Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaName")]
+		public string MetaName => SEocontrols.GetMetaName(this);
 	}
 }

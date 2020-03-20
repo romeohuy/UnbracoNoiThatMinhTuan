@@ -66,6 +66,12 @@
     @Html.Partial("~/Views/Partials/FeatureSerivcesPartial.cshtml", featureServices)
 }
 <!--End Feature Service-->
+<!--Feature Project-->
+@if (Model.FeatureProjectContentList != null)
+{
+    @Html.Partial("~/Views/Partials/FeatureProjectsPartial.cshtml", Model.FeatureProjectContentList.ToList())
+}
+<!--End Feature Project-->
 @* the fun starts here *@
 <!-- ABOUT -->
 @*<div class="row-about">
