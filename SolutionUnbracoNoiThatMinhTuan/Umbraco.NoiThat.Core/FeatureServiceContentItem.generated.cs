@@ -20,49 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	// Mixin Content Type with alias "featureServicesControls"
-	/// <summary>Feature Services Controls</summary>
-	public partial interface IFeatureServicesControls : IPublishedContent
-	{
-		/// <summary>Feature Service ContentList</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IEnumerable<FeatureServiceContentItem> FeatureServiceContentList { get; }
-	}
-
-	/// <summary>Feature Services Controls</summary>
-	[PublishedModel("featureServicesControls")]
-	public partial class FeatureServicesControls : PublishedContentModel, IFeatureServicesControls
+	/// <summary>Feature Service Content Item</summary>
+	[PublishedModel("featureServiceContentItem")]
+	public partial class FeatureServiceContentItem : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "featureServicesControls";
+		public new const string ModelTypeAlias = "featureServiceContentItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FeatureServicesControls, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FeatureServiceContentItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public FeatureServicesControls(IPublishedContent content)
+		public FeatureServiceContentItem(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Feature Service ContentList
+		/// FeatureServiceContentSelected
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("featureServiceContentList")]
-		public IEnumerable<FeatureServiceContentItem> FeatureServiceContentList => GetFeatureServiceContentList(this);
-
-		/// <summary>Static getter for Feature Service ContentList</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IEnumerable<FeatureServiceContentItem> GetFeatureServiceContentList(IFeatureServicesControls that) => that.Value<IEnumerable<FeatureServiceContentItem>>("featureServiceContentList");
+		[ImplementPropertyType("featureServiceContentSelected")]
+		public IPublishedContent FeatureServiceContentSelected => this.Value<IPublishedContent>("featureServiceContentSelected");
 	}
 }

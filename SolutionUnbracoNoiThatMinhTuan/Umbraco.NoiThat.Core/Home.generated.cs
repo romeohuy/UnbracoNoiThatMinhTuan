@@ -46,11 +46,11 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
-		/// Feature Service List
+		/// Feature Service ContentList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("featureServiceList")]
-		public IPublishedContent FeatureServiceList => FeatureServicesControls.GetFeatureServiceList(this);
+		[ImplementPropertyType("featureServiceContentList")]
+		public IEnumerable<FeatureServiceContentItem> FeatureServiceContentList => FeatureServicesControls.GetFeatureServiceContentList(this);
 
 		///<summary>
 		/// HomeMainSlide

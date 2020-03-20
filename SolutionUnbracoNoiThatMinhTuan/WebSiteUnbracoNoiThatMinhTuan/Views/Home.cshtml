@@ -1,4 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Home>
+﻿@using Umbraco.NoiThat.Core
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Home>
 @{
     Layout = "masterPage.cshtml";
 }
@@ -54,125 +55,41 @@
                     </div>
                 </li>
             }
-
-            <!-- /End Slide 1 -->
-            <!-- Slide 2 -->
-            @*<li data-transition="random">
-            <!-- Main Image -->
-            <img src="@Model.HomeSlideImageTrue.GetCropUrl()" alt="" data-bgposition="center center" data-no-retina>
-
-            <!-- Layers -->
-            <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 text-center"
-                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                 data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-90']"
-                 data-fontsize="['20','20','20','16']"
-                 data-lineheight="['70','70','40','24']"
-                 data-width="full"
-                 data-height="none"
-                 data-whitespace="normal"
-                 data-transform_idle="o:1;"
-                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                 data-mask_in="x:0px;y:[100%];"
-                 data-mask_out="x:inherit;y:inherit;"
-                 data-start="700"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-responsive_offset="on">
-                @Model.HomeSlideImageTrueTitle
-            </div>
-            <div class="tp-caption text-center"
-                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                 data-y="['middle','middle','middle','middle']" data-voffset="['153','153','153','153']"
-                 data-width="full"
-                 data-height="none"
-                 data-whitespace="normal"
-                 data-transform_idle="o:1;"
-                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                 data-mask_in="x:0px;y:[100%];"
-                 data-mask_out="x:inherit;y:inherit;"
-                 data-start="1000"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-responsive_offset="on">
-                <a href="#" class="themesflat-button bg-accent big"><span>GET IN TOUCH</span></a>
-            </div>
-        </li>
-        <!-- /End Slide 2 -->
-        <!-- Slide 3 -->
-        <li data-transition="random">
-            <!-- Main Image -->
-            <img src="@Model.HomeSlideImageThree.GetCropUrl()" alt="" data-bgposition="center center" data-no-retina>
-
-            <!-- Layers -->
-            <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 text-right"
-                 data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
-                 data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-90']"
-                 data-fontsize="['20','20','20','16']"
-                 data-lineheight="['70','70','40','24']"
-                 data-width="full"
-                 data-height="none"
-                 data-whitespace="normal"
-                 data-transform_idle="o:1;"
-                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                 data-mask_in="x:0px;y:[100%];"
-                 data-mask_out="x:inherit;y:inherit;"
-                 data-start="700"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-responsive_offset="on">
-                @Model.HomeSlideImageThreeTitle
-            </div>
-
-            <div class="tp-caption text-right"
-                 data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
-                 data-y="['middle','middle','middle','middle']" data-voffset="['153','153','153','153']"
-                 data-width="full"
-                 data-height="none"
-                 data-whitespace="normal"
-                 data-transform_idle="o:1;"
-                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                 data-mask_in="x:0px;y:[100%];"
-                 data-mask_out="x:inherit;y:inherit;"
-                 data-start="1000"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-responsive_offset="on">
-                <a href="#" class="themesflat-button bg-accent big"><span>GET IN TOUCH</span></a>
-            </div>
-        </li>*@
-            <!-- /End Slide 3 -->
         </ul>
     </div>
 </div>
 <!-- END SLIDER -->
+<!--Feature Services-->
+@if (Model.FeatureServiceContentList != null)
+{
+    var featureServices = Model.FeatureServiceContentList.ToList();
+    @Html.Partial("~/Views/Partials/FeatureSerivcesPartial.cshtml", featureServices)
+}
+<!--End Feature Service-->
 @* the fun starts here *@
 <!-- ABOUT -->
 @*<div class="row-about">
-    <div class="container-fluid">
-        <div class="row equalize sm-equalize-auto">
-            <div class="col-md-6 half-background style-1" style="background-image: url('@Model.HomeAboutUsCoverImage.GetCropUrl()')">
+        <div class="container-fluid">
+            <div class="row equalize sm-equalize-auto">
+                <div class="col-md-6 half-background style-1" style="background-image: url('@Model.HomeAboutUsCoverImage.GetCropUrl()')">
 
-            </div><!-- /.col-md-6 -->
-            <div class="col-md-6 bg-light-grey">
-                <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-content-box clearfix" data-margin="0 25% 0 4.5%" data-mobilemargin="0 0 0 4.5%">
-                    <div class="themesflat-headings style-1 clearfix">
-                        <h2 class="heading">@Model.HomeAboutUsTitle</h2>
-                        <div class="sep has-width w80 accent-bg margin-top-11 clearfix"></div>
-                        <p class="sub-heading margin-top-30">@Model.HomeAboutUsDescription</p>
-                    </div>
+                </div><!-- /.col-md-6 -->
+                <div class="col-md-6 bg-light-grey">
+                    <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="35" data-smobile="35"></div>
+                    <div class="themesflat-content-box clearfix" data-margin="0 25% 0 4.5%" data-mobilemargin="0 0 0 4.5%">
+                        <div class="themesflat-headings style-1 clearfix">
+                            <h2 class="heading">@Model.HomeAboutUsTitle</h2>
+                            <div class="sep has-width w80 accent-bg margin-top-11 clearfix"></div>
+                            <p class="sub-heading margin-top-30">@Model.HomeAboutUsDescription</p>
+                        </div>
 
-                    <div class="elm-button">
-                        <a href="#" class="themesflat-button bg-white">GET IN TOUCH</a>
-                    </div>
-                </div><!-- /.themesflat-content-box -->
-                <div class="themesflat-spacer clearfix" data-desktop="76" data-mobile="60" data-smobile="60"></div>
-            </div><!-- /.col-md-6 -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-</div>*@
+                        <div class="elm-button">
+                            <a href="#" class="themesflat-button bg-white">GET IN TOUCH</a>
+                        </div>
+                    </div><!-- /.themesflat-content-box -->
+                    <div class="themesflat-spacer clearfix" data-desktop="76" data-mobile="60" data-smobile="60"></div>
+                </div><!-- /.col-md-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>*@
 <!-- END ABOUT -->
