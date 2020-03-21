@@ -5,65 +5,64 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<List<FeatureProjectContentItem>>
 
 <!-- PROJECT -->
-<div class="row-project clearfix">
-    <div class="container">
+<div class="row-project parallax parallax-1 parallax-overlay">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
-                <div class="position-relative">
-                    <div class="themesflat-headings style-1 clearfix">
-                        <h2 class="heading ">DỰ ÁN ĐÃ THỰC HIỆN</h2>
+                <div class="themesflat-headings style-1 text-center clearfix">
+                    <h2 class="heading text-white">DỰ ÁN NỔI BẬT</h2>
+                    <div class="sep has-icon width-125 border-color-light clearfix">
+                        <div class="sep-icon">
+                            <span class="sep-icon-before sep-center sep-solid"></span>
+                            <span class="icon-wrap"><i class="autora-icon-build"></i></span>
+                            <span class="sep-icon-after sep-center sep-solid"></span>
+                        </div>
                     </div>
-                    <ul class="themesflat-filter style-1 filter-absolute clearfix">
-                        
-                        <li class="active"><a href="#" data-filter="*">All</a></li>
-                        @{
-
-                            var categories = Model.Select(_ => (ProjectDetail)_.FeatureProjectContentSelected).Select(s=>s.CategoriesDropdownList.FirstOrDefault()).OrderBy(_=>_).Distinct();
-                            foreach (var category in categories)
+                </div>
+                <div class="themesflat-spacer clearfix" data-desktop="30" data-mobile="35" data-smobile="35"></div>
+                <div class="themesflat-carousel-box clearfix" data-gap="30" data-column="4" data-column2="2" data-column3="1" data-auto="false">
+                    <div class="owl-carousel owl-theme">
+                        @foreach (var item in Model.Select(_ => _.FeatureProjectContentSelected))
+                        {
+                            if (item is ProjectDetail projectDetail)
                             {
-                                <li><a href="#" data-filter=".@StringHelpers.RemoveSign4VietnameseString(category)">@category</a></li>
+
+                                <div class="themesflat-project style-1 data-effect  clearfix">
+                                    <div class="project-item">
+                                        <div class="inner">
+                                            <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
+                                                <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                                <div class="text-wrap text-center">
+                                                    <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
+                                                    <div class="elm-meta">
+                                                        @foreach (var tag in projectDetail.MetaKeywords)
+                                                        {
+                                                            <span><a href="#">@tag</a></span>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="elm-link">
+                                                    <a href="@projectDetail.Url" class="icon-1 icon-search"></a>
+                                                    <a href="@projectDetail.Url" class="icon-1"></a>
+                                                </div>
+                                                <div class="overlay-effect bg-color-3"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- /.themesflat-project -->
                             }
                         }
-
-                    </ul>
+                    </div>
+                </div><!-- /.themesflat-carousel-box -->
+                <div class="themesflat-spacer clearfix" data-desktop="41" data-mobile="35" data-smobile="35"></div>
+                <div class="elm-button text-center">
+                    <a href="~/projects" class="themesflat-button bg-accent">TẤT CẢ DỰ ÁN</a>
                 </div>
-                <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
-                    @foreach (var item in Model.Select(_=>_.FeatureProjectContentSelected))
-                    {
-                        if (item is ProjectDetail projectDetail)
-                        {
-                            <div class="project-item @StringHelpers.RemoveSign4VietnameseString(projectDetail.CategoriesDropdownList.First()) villa">
-                                <div class="inner">
-                                    <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
-                                        <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
-                                        <div class="elm-link">
-                                            @*<a href="#" class="icon-1 icon-search"></a>*@
-                                            <a href="#" class="icon-1"></a>
-                                        </div>
-                                        <div class="overlay-effect bg-color-3"></div>
-                                    </div>
-                                    <div class="text-wrap">
-                                        <h5 class="heading"><a href="#">@projectDetail.PageTitle</a></h5>
-                                        <div class="elm-meta">
-                                            @foreach (var tag in projectDetail.MetaKeywords)
-                                            {
-                                                <span><a href="#">@tag</a></span>
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- /.product-item -->
-                        }
-                        
-                    }
-                </div><!-- /.themesflat-project -->
+                <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60"></div>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
+    <div class="bg-parallax-overlay overlay-black"></div>
 </div>
 <!-- END PROJECT -->
-
-
-

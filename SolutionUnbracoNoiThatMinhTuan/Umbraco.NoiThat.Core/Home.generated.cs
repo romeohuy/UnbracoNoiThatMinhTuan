@@ -46,6 +46,20 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
+		/// CompanyListPartner
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("companyListPartner")]
+		public IEnumerable<CompanyPartnerItem> CompanyListPartner => this.Value<IEnumerable<CompanyPartnerItem>>("companyListPartner");
+
+		///<summary>
+		/// Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("email")]
+		public string Email => this.Value<string>("email");
+
+		///<summary>
 		/// FeatureProjectContentList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

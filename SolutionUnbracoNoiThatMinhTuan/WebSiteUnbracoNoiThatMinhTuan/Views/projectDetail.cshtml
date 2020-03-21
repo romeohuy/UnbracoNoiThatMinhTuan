@@ -1,6 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.ProjectDetail>
 @{
     Layout = "masterPage.cshtml";
+    Page.Title = Model.PageTitle;
+    Page.Description = Model.MetaDescription;
 }
 
 @* the fun starts here *@
