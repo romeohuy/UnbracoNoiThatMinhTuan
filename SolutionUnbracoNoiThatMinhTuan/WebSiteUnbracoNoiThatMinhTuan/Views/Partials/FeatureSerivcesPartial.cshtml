@@ -1,4 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<Umbraco.NoiThat.Core.FeatureServiceContentItem>>
+﻿@using Umbraco.NoiThat.Core
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<Umbraco.NoiThat.Core.FeatureServiceContentItem>>
 
 
 <!-- SERVICES -->
@@ -20,26 +21,28 @@
                 <div class="themesflat-spacer clearfix" data-desktop="27" data-mobile="35" data-smobile="35"></div>
                 <div class="themesflat-carousel-box has-arrows arrow-center offset-v-111 offset-h-21 arrow-circle arrow-style-2 data-effect clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-auto="true">
                     <div class="owl-carousel owl-theme">
-                        @foreach (var serviceDetail in Model)
+                        @foreach (var serviceContentItem in Model.Select(_ => _.FeatureServiceContentSelected))
                         {
-                            <div class="themesflat-image-box style-2 clearfix">
-                                <div class="image-box-item">
-                                    <div class="inner">
-                                        <div class="thumb data-effect-item">
-                                            <img src="assets/img/imagebox/image-box-1-370x215.jpg" alt="Image">
-                                            <div class="overlay-effect bg-color-accent"></div>
-                                        </div>
-                                        <div class="text-wrap">
-                                            <h5 class="heading"><a href="#">DESIGN-BUILD</a></h5>
-                                            <p>We develop and understand project expectations and then manage those needs with a design team...</p>
-                                            <div class="elm-readmore">
-                                                <a href="#">DETAILS</a>
+                            if (serviceContentItem is ServiceDetail serviceDetail)
+                            {
+                                <div class="themesflat-image-box style-2 clearfix">
+                                    <div class="image-box-item">
+                                        <div class="inner">
+                                            <div class="thumb data-effect-item">
+                                                <img src="@serviceDetail.PageMainImage.Url" alt="@serviceDetail.PageTitle">
+                                                <div class="overlay-effect bg-color-accent"></div>
+                                            </div>
+                                            <div class="text-wrap">
+                                                <h5 class="heading"><a href="@serviceDetail.Url">@serviceDetail.PageTitle</a></h5>
+                                                <p>@serviceDetail.PageShortContent</p>
+                                                <div class="elm-readmore">
+                                                    <a href="@serviceDetail.Url">CHI TIẾT</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div><!-- /.themesflat-image-box -->
-
+                                </div><!-- /.themesflat-image-box -->
+                            }
                         }
                     </div>
                 </div><!-- /.themesflat-carousel-box -->

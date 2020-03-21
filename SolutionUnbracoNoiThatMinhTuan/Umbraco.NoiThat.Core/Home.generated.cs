@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IFeatureProjectsControls, IFeatureServicesControls, IHomeMainSlideImage, ITopBarHeaderControl
+	public partial class Home : PublishedContentModel, IFeatureProjectsControls, IFeatureServicesControls, IGeneralControls, IHomeMainSlideImage, ISEocontrols, ITopBarHeaderControl
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -60,11 +60,60 @@ namespace Umbraco.NoiThat.Core
 		public IEnumerable<FeatureServiceContentItem> FeatureServiceContentList => FeatureServicesControls.GetFeatureServiceContentList(this);
 
 		///<summary>
+		/// PageMainDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainDescription")]
+		public IHtmlString PageMainDescription => GeneralControls.GetPageMainDescription(this);
+
+		///<summary>
+		/// PageMainImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainImage")]
+		public IPublishedContent PageMainImage => GeneralControls.GetPageMainImage(this);
+
+		///<summary>
+		/// Page Short Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageShortContent")]
+		public IHtmlString PageShortContent => GeneralControls.GetPageShortContent(this);
+
+		///<summary>
+		/// PageTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => GeneralControls.GetPageTitle(this);
+
+		///<summary>
 		/// HomeMainSlide
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("homeMainSlide")]
 		public IEnumerable<SildeImageItem> HomeMainSlide => HomeMainSlideImage.GetHomeMainSlide(this);
+
+		///<summary>
+		/// Meta Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription => SEocontrols.GetMetaDescription(this);
+
+		///<summary>
+		/// Meta Keywords
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaKeywords")]
+		public IEnumerable<string> MetaKeywords => SEocontrols.GetMetaKeywords(this);
+
+		///<summary>
+		/// Meta Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaName")]
+		public string MetaName => SEocontrols.GetMetaName(this);
 
 		///<summary>
 		/// Address

@@ -9,6 +9,30 @@
 }
 @* the fun starts here *@
 
+@section FeaturedTitleBlock{
+    <!-- Featured Title -->
+    <div id="featured-title" class="featured-title clearfix">
+        <div id="featured-title-inner" class="container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="~/" class="trail-begin">Trang chủ</a>
+                            <span class="sep">|</span>
+                            <span class="trail-end">Dự án đã hoàn thành</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-title-heading-wrap">
+                    <h1 class="feautured-title-heading">
+                        Dự án đã hoàn thành
+                    </h1>
+                </div>
+            </div><!-- /.featured-title-inner-wrap -->
+        </div><!-- /#featured-title-inner -->
+    </div>
+    <!-- End Featured Title -->
+}
 <!-- PROJECT -->
 <div class="row-project clearfix">
     <div class="container">
@@ -16,17 +40,19 @@
             <div class="col-md-12">
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
                 <div class="position-relative">
-                    <div class="themesflat-headings style-1 clearfix">
-                        <h2 class="heading ">DỰ ÁN ĐÃ THỰC HIỆN</h2>
-                    </div>
+                   
                     <ul class="themesflat-filter style-1 filter-absolute clearfix">
 
                         <li class="active"><a href="#" data-filter="*">All</a></li>
                         @{
 
                             var projectDetails = projectDetailList as ProjectDetail[] ?? projectDetailList.ToArray();
-                            var categories = projectDetails.Select(s => s.CategoriesDropdownList.FirstOrDefault()).OrderBy(_ => _).Distinct();
-                            foreach (var category in categories)
+                            var listCategories = new List<string>();
+                            foreach (var projectDetail in projectDetails)
+                            {
+                                listCategories.AddRange(projectDetail.CategoriesDropdownList.WhereNotNull());
+                            }
+                            foreach (var category in listCategories.Distinct())
                             {
                                 <li><a href="#" data-filter=".@StringHelpers.RemoveSign4VietnameseString(category)">@category</a></li>
                             }
@@ -36,22 +62,27 @@
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
                 <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
-                    @foreach (var projectDetail in projectDetails)
+                    @foreach (var projectDetail in projectDetails.Where(_=>_ != null))
                     {
-                        <div class="project-item @StringHelpers.RemoveSign4VietnameseString(projectDetail.CategoriesDropdownList.First()) villa">
+                        var categoryName = string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString));//projectDetail.CategoriesDropdownList != null ? string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString)) : string.Empty;
+
+                            <div class="project-item @categoryName villa">
                             <div class="inner">
                                 <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
-                                    <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                    @if (projectDetail.PageMainImage != null)
+                                    {
+                                        <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                    }
                                     <div class="elm-link">
                                         @*<a href="#" class="icon-1 icon-search"></a>*@
-                                        <a href="#" class="icon-1"></a>
+                                        <a href="@projectDetail.Url" class="icon-1"></a>
                                     </div>
                                     <div class="overlay-effect bg-color-3"></div>
                                 </div>
                                 <div class="text-wrap">
-                                    <h5 class="heading"><a href="#">@projectDetail.PageTitle</a></h5>
+                                    <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
                                     <div class="elm-meta">
-                                        @foreach (var tag in projectDetail.MetaKeywords)
+                                        @foreach (var tag in projectDetail.MetaKeywords.ToList())
                                         {
                                             <span><a href="#">@tag</a></span>
                                         }

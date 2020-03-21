@@ -2,6 +2,8 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Home>
 @{
     Layout = "masterPage.cshtml";
+    Page.Title = Model.PageTitle;
+    Page.Description = Model.MetaDescription;
 }
 
 <!-- SLIDER -->
