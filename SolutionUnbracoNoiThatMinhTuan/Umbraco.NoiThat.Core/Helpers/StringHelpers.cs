@@ -49,7 +49,10 @@ namespace Umbraco.NoiThat.Core.Helpers
         public static string RemoveSign4VietnameseString(string str)
 
         {
-
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
             //Tiến hành thay thế , lọc bỏ dấu cho chuỗi
 
             for (int i = 1; i < VietnameseSigns.Length; i++)

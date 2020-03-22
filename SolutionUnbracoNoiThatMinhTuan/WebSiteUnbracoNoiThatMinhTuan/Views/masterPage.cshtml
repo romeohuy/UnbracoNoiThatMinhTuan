@@ -39,13 +39,14 @@
 
 </head>
 
-<body class="header-fixed page no-sidebar header-style-3 topbar-style-3 site-header-absolute menu-has-search">
+<body class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
 
     <div id="wrapper" class="animsition">
         <div id="page" class="clearfix">
             <!-- Header Wrap -->
             @Html.Partial("~/Views/Partials/HeaderPartial.cshtml")
             <!-- #site-header-wrap -->
+            @RenderSection("FeaturedTitleBlock", required: false)
             <!-- Main Content -->
             <div id="main-content" class="site-main clearfix">
                 <div id="content-wrap">

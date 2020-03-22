@@ -53,11 +53,46 @@ namespace Umbraco.NoiThat.Core
 		public IEnumerable<CompanyPartnerItem> CompanyListPartner => this.Value<IEnumerable<CompanyPartnerItem>>("companyListPartner");
 
 		///<summary>
+		/// Customer Talk About Us List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("customerTalkAboutUsList")]
+		public IEnumerable<CustomerTalkAboutUs> CustomerTalkAboutUsList => this.Value<IEnumerable<CustomerTalkAboutUs>>("customerTalkAboutUsList");
+
+		///<summary>
 		/// Email
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("email")]
 		public string Email => this.Value<string>("email");
+
+		///<summary>
+		/// footerMap
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerMap")]
+		public string FooterMap => this.Value<string>("footerMap");
+
+		///<summary>
+		/// Home About Us Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("homeAboutUsContent")]
+		public IHtmlString HomeAboutUsContent => this.Value<IHtmlString>("homeAboutUsContent");
+
+		///<summary>
+		/// HomeAboutUsLeftImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("homeAboutUsLeftImage")]
+		public IPublishedContent HomeAboutUsLeftImage => this.Value<IPublishedContent>("homeAboutUsLeftImage");
+
+		///<summary>
+		/// HomeAboutUsTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("homeAboutUsTitle")]
+		public string HomeAboutUsTitle => this.Value<string>("homeAboutUsTitle");
 
 		///<summary>
 		/// FeatureProjectContentList
@@ -67,11 +102,25 @@ namespace Umbraco.NoiThat.Core
 		public IEnumerable<FeatureProjectContentItem> FeatureProjectContentList => FeatureProjectsControls.GetFeatureProjectContentList(this);
 
 		///<summary>
+		/// Feature Project Intro
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("featureProjectIntro")]
+		public string FeatureProjectIntro => FeatureProjectsControls.GetFeatureProjectIntro(this);
+
+		///<summary>
 		/// Feature Service ContentList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("featureServiceContentList")]
 		public IEnumerable<FeatureServiceContentItem> FeatureServiceContentList => FeatureServicesControls.GetFeatureServiceContentList(this);
+
+		///<summary>
+		/// Feature Service Intro
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("featureServiceIntro")]
+		public string FeatureServiceIntro => FeatureServicesControls.GetFeatureServiceIntro(this);
 
 		///<summary>
 		/// PageMainDescription

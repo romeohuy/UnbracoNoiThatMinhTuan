@@ -27,6 +27,10 @@ namespace Umbraco.NoiThat.Core
 		/// <summary>Feature Service ContentList</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IEnumerable<FeatureServiceContentItem> FeatureServiceContentList { get; }
+
+		/// <summary>Feature Service Intro</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string FeatureServiceIntro { get; }
 	}
 
 	/// <summary>Feature Services Controls</summary>
@@ -64,5 +68,16 @@ namespace Umbraco.NoiThat.Core
 		/// <summary>Static getter for Feature Service ContentList</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static IEnumerable<FeatureServiceContentItem> GetFeatureServiceContentList(IFeatureServicesControls that) => that.Value<IEnumerable<FeatureServiceContentItem>>("featureServiceContentList");
+
+		///<summary>
+		/// Feature Service Intro
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("featureServiceIntro")]
+		public string FeatureServiceIntro => GetFeatureServiceIntro(this);
+
+		/// <summary>Static getter for Feature Service Intro</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetFeatureServiceIntro(IFeatureServicesControls that) => that.Value<string>("featureServiceIntro");
 	}
 }
