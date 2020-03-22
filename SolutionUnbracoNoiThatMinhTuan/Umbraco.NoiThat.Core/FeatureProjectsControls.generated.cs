@@ -27,6 +27,10 @@ namespace Umbraco.NoiThat.Core
 		/// <summary>FeatureProjectContentList</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IEnumerable<FeatureProjectContentItem> FeatureProjectContentList { get; }
+
+		/// <summary>Feature Project Intro</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string FeatureProjectIntro { get; }
 	}
 
 	/// <summary>Feature Projects  Controls</summary>
@@ -64,5 +68,16 @@ namespace Umbraco.NoiThat.Core
 		/// <summary>Static getter for FeatureProjectContentList</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static IEnumerable<FeatureProjectContentItem> GetFeatureProjectContentList(IFeatureProjectsControls that) => that.Value<IEnumerable<FeatureProjectContentItem>>("featureProjectContentList");
+
+		///<summary>
+		/// Feature Project Intro
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("featureProjectIntro")]
+		public string FeatureProjectIntro => GetFeatureProjectIntro(this);
+
+		/// <summary>Static getter for Feature Project Intro</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetFeatureProjectIntro(IFeatureProjectsControls that) => that.Value<string>("featureProjectIntro");
 	}
 }

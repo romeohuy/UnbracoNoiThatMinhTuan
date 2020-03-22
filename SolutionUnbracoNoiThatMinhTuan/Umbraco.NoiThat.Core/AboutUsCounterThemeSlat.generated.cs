@@ -20,57 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>About Team List</summary>
-	[PublishedModel("aboutTeamList")]
-	public partial class AboutTeamList : PublishedElementModel
+	/// <summary>About Us Counter ThemeSlat</summary>
+	[PublishedModel("aboutUsCounterThemeSlat")]
+	public partial class AboutUsCounterThemeSlat : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "aboutTeamList";
+		public new const string ModelTypeAlias = "aboutUsCounterThemeSlat";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutTeamList, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsCounterThemeSlat, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public AboutTeamList(IPublishedElement content)
+		public AboutUsCounterThemeSlat(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// TeamImage
+		/// CounterNumber
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("teamImage")]
-		public IPublishedContent TeamImage => this.Value<IPublishedContent>("teamImage");
+		[ImplementPropertyType("counterNumber")]
+		public int CounterNumber => this.Value<int>("counterNumber");
 
 		///<summary>
-		/// TeamName
+		/// CounterSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("teamName")]
-		public string TeamName => this.Value<string>("teamName");
-
-		///<summary>
-		/// TeamPosition
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("teamPosition")]
-		public string TeamPosition => this.Value<string>("teamPosition");
-
-		///<summary>
-		/// TeamSocial
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("teamSocial")]
-		public IEnumerable<IconLinkItems> TeamSocial => this.Value<IEnumerable<IconLinkItems>>("teamSocial");
+		[ImplementPropertyType("counterSub")]
+		public string CounterSub => this.Value<string>("counterSub");
 	}
 }

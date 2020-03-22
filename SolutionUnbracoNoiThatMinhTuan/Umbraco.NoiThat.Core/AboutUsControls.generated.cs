@@ -42,7 +42,7 @@ namespace Umbraco.NoiThat.Core
 
 		/// <summary>CounterThemeslat</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IEnumerable<AboutUsThemeslatList> CounterThemeslat { get; }
+		IEnumerable<AboutUsCounterThemeSlat> CounterThemeslat { get; }
 
 		/// <summary>IconBoxHead</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -167,11 +167,11 @@ namespace Umbraco.NoiThat.Core
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("counterThemeslat")]
-		public IEnumerable<AboutUsThemeslatList> CounterThemeslat => GetCounterThemeslat(this);
+		public IEnumerable<AboutUsCounterThemeSlat> CounterThemeslat => GetCounterThemeslat(this);
 
 		/// <summary>Static getter for CounterThemeslat</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IEnumerable<AboutUsThemeslatList> GetCounterThemeslat(IAboutUsControls that) => that.Value<IEnumerable<AboutUsThemeslatList>>("counterThemeslat");
+		public static IEnumerable<AboutUsCounterThemeSlat> GetCounterThemeslat(IAboutUsControls that) => that.Value<IEnumerable<AboutUsCounterThemeSlat>>("counterThemeslat");
 
 		///<summary>
 		/// IconBoxHead

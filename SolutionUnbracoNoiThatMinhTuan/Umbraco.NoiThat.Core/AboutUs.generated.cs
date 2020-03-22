@@ -78,7 +78,7 @@ namespace Umbraco.NoiThat.Core
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("counterThemeslat")]
-		public IEnumerable<AboutUsThemeslatList> CounterThemeslat => AboutUsControls.GetCounterThemeslat(this);
+		public IEnumerable<AboutUsCounterThemeSlat> CounterThemeslat => AboutUsControls.GetCounterThemeslat(this);
 
 		///<summary>
 		/// IconBoxHead

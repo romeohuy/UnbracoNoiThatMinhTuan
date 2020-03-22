@@ -46,6 +46,13 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
+		/// TabAccordingItemActive
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("tabAccordingItemActive")]
+		public string TabAccordingItemActive => this.Value<string>("tabAccordingItemActive");
+
+		///<summary>
 		/// TabAccordinItemHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

@@ -389,6 +389,9 @@
     <Compile Include="AboutUsControls.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="AboutUsCounterThemeSlat.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="AboutUsIcoinList.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -411,6 +414,9 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="ContactControl.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTalkAboutUs.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Error.generated.cs">
@@ -473,12 +479,6 @@
     </Compile>
     <Compile Include="ModelsBuilder.cs">
       <Generator>UmbracoModelsBuilder</Generator>
-      <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
-    </Compile>
-    <Compile Include="ModelsBuilder.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -517,6 +517,8 @@
     <Compile Include="TopBarHeaderControl.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\HomeFeatureProjectViewModel.cs" />
+    <Compile Include="ViewModels\HomeFeatureServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
