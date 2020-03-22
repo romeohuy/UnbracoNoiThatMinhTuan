@@ -46,6 +46,20 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
+		/// Project Dictionary Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("projectDictionaryContent")]
+		public IEnumerable<GeneralDictionaryItem> ProjectDictionaryContent => this.Value<IEnumerable<GeneralDictionaryItem>>("projectDictionaryContent");
+
+		///<summary>
+		/// PageMainDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainDescription")]
+		public IHtmlString PageMainDescription => GeneralControls.GetPageMainDescription(this);
+
+		///<summary>
 		/// PageMainImage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

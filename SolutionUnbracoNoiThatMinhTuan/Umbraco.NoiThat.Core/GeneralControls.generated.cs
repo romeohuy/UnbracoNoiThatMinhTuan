@@ -24,6 +24,10 @@ namespace Umbraco.NoiThat.Core
 	/// <summary>General Controls</summary>
 	public partial interface IGeneralControls : IPublishedContent
 	{
+		/// <summary>PageMainDescription</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IHtmlString PageMainDescription { get; }
+
 		/// <summary>PageMainImage</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IPublishedContent PageMainImage { get; }
@@ -61,6 +65,17 @@ namespace Umbraco.NoiThat.Core
 		{ }
 
 		// properties
+
+		///<summary>
+		/// PageMainDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainDescription")]
+		public IHtmlString PageMainDescription => GetPageMainDescription(this);
+
+		/// <summary>Static getter for PageMainDescription</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IHtmlString GetPageMainDescription(IGeneralControls that) => that.Value<IHtmlString>("pageMainDescription");
 
 		///<summary>
 		/// PageMainImage

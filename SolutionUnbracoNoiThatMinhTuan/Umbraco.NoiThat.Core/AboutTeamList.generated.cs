@@ -46,6 +46,13 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
+		/// TeamImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("teamImage")]
+		public IPublishedContent TeamImage => this.Value<IPublishedContent>("teamImage");
+
+		///<summary>
 		/// TeamName
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

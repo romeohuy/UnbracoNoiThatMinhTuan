@@ -20,57 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>About us Icoin List</summary>
-	[PublishedModel("aboutUsIcoinList")]
-	public partial class AboutUsIcoinList : PublishedElementModel
+	/// <summary>General Dictionary Item</summary>
+	[PublishedModel("generalDictionaryItem")]
+	public partial class GeneralDictionaryItem : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "aboutUsIcoinList";
+		public new const string ModelTypeAlias = "generalDictionaryItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsIcoinList, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GeneralDictionaryItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public AboutUsIcoinList(IPublishedElement content)
+		public GeneralDictionaryItem(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// AboutUsIconClass
+		/// GeneralDictionaryItemLabel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconClass")]
-		public string AboutUsIconClass => this.Value<string>("aboutUsIconClass");
+		[ImplementPropertyType("generalDictionaryItemLabel")]
+		public string GeneralDictionaryItemLabel => this.Value<string>("generalDictionaryItemLabel");
 
 		///<summary>
-		/// AboutUsIconHead
+		/// General Dictionary Item Value
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconHead")]
-		public string AboutUsIconHead => this.Value<string>("aboutUsIconHead");
-
-		///<summary>
-		/// AboutUsIconSub
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconSub")]
-		public string AboutUsIconSub => this.Value<string>("aboutUsIconSub");
-
-		///<summary>
-		/// AboutUsIconUrl
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconUrl")]
-		public Umbraco.Web.Models.Link AboutUsIconUrl => this.Value<Umbraco.Web.Models.Link>("aboutUsIconUrl");
+		[ImplementPropertyType("generalDictionaryItemValue")]
+		public string GeneralDictionaryItemValue => this.Value<string>("generalDictionaryItemValue");
 	}
 }

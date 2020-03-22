@@ -46,6 +46,20 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
+		/// errorMessage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("errorMessage")]
+		public string ErrorMessage => this.Value<string>("errorMessage");
+
+		///<summary>
+		/// successMessage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("successMessage")]
+		public string SuccessMessage => this.Value<string>("successMessage");
+
+		///<summary>
 		/// Contact Phone
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

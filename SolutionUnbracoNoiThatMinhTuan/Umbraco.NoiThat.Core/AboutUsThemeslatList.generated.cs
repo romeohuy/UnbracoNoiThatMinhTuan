@@ -51,5 +51,12 @@ namespace Umbraco.NoiThat.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("themeslatSub")]
 		public string ThemeslatSub => this.Value<string>("themeslatSub");
+
+		///<summary>
+		/// ThemeslatSubActive
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("themeslatSubActive")]
+		public string ThemeslatSubActive => this.Value<string>("themeslatSubActive");
 	}
 }

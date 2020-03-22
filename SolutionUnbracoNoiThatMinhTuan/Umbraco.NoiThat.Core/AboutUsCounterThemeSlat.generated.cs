@@ -20,57 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>About us Icoin List</summary>
-	[PublishedModel("aboutUsIcoinList")]
-	public partial class AboutUsIcoinList : PublishedElementModel
+	/// <summary>About Us Counter ThemeSlat</summary>
+	[PublishedModel("aboutUsCounterThemeSlat")]
+	public partial class AboutUsCounterThemeSlat : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "aboutUsIcoinList";
+		public new const string ModelTypeAlias = "aboutUsCounterThemeSlat";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsIcoinList, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsCounterThemeSlat, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public AboutUsIcoinList(IPublishedElement content)
+		public AboutUsCounterThemeSlat(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// AboutUsIconClass
+		/// CounterNumber
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconClass")]
-		public string AboutUsIconClass => this.Value<string>("aboutUsIconClass");
+		[ImplementPropertyType("counterNumber")]
+		public int CounterNumber => this.Value<int>("counterNumber");
 
 		///<summary>
-		/// AboutUsIconHead
+		/// CounterSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconHead")]
-		public string AboutUsIconHead => this.Value<string>("aboutUsIconHead");
-
-		///<summary>
-		/// AboutUsIconSub
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconSub")]
-		public string AboutUsIconSub => this.Value<string>("aboutUsIconSub");
-
-		///<summary>
-		/// AboutUsIconUrl
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("aboutUsIconUrl")]
-		public Umbraco.Web.Models.Link AboutUsIconUrl => this.Value<Umbraco.Web.Models.Link>("aboutUsIconUrl");
+		[ImplementPropertyType("counterSub")]
+		public string CounterSub => this.Value<string>("counterSub");
 	}
 }

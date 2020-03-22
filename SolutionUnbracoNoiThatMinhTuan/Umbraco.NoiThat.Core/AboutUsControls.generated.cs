@@ -20,9 +20,82 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
+	// Mixin Content Type with alias "aboutUsControls"
+	/// <summary>About Us Controls</summary>
+	public partial interface IAboutUsControls : IPublishedContent
+	{
+		/// <summary>AboutHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string AboutHead { get; }
+
+		/// <summary>AboutSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string AboutSub { get; }
+
+		/// <summary>TabLeftSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string AboutTabLeftSub { get; }
+
+		/// <summary>AboutThemeslat</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutUsThemeslatList> AboutThemeslat { get; }
+
+		/// <summary>CounterThemeslat</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutUsCounterThemeSlat> CounterThemeslat { get; }
+
+		/// <summary>IconBoxHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string IconBoxHead { get; }
+
+		/// <summary>IconBoxList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutUsIcoinList> IconBoxList { get; }
+
+		/// <summary>IconBoxSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string IconBoxSub { get; }
+
+		/// <summary>QuotePhone</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string QuotePhone { get; }
+
+		/// <summary>QuoteSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string QuoteSub { get; }
+
+		/// <summary>TabLeftSubDetailList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutTabItemList> TabLeftSubDetailList { get; }
+
+		/// <summary>TabLeftSubList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutUsThemeslatList> TabLeftSubList { get; }
+
+		/// <summary>TabRightHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string TabRightHead { get; }
+
+		/// <summary>TabRightSubList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutTabAccordinItemList> TabRightSubList { get; }
+
+		/// <summary>TeamHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string TeamHead { get; }
+
+		/// <summary>TeamItemList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<AboutTeamList> TeamItemList { get; }
+
+		/// <summary>TeamSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string TeamSub { get; }
+	}
+
 	/// <summary>About Us Controls</summary>
 	[PublishedModel("aboutUsControls")]
-	public partial class AboutUsControls : PublishedContentModel
+	public partial class AboutUsControls : PublishedContentModel, IAboutUsControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,118 +123,186 @@ namespace Umbraco.NoiThat.Core
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("aboutHead")]
-		public string AboutHead => this.Value<string>("aboutHead");
+		public string AboutHead => GetAboutHead(this);
+
+		/// <summary>Static getter for AboutHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetAboutHead(IAboutUsControls that) => that.Value<string>("aboutHead");
 
 		///<summary>
 		/// AboutSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("aboutSub")]
-		public string AboutSub => this.Value<string>("aboutSub");
+		public string AboutSub => GetAboutSub(this);
+
+		/// <summary>Static getter for AboutSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetAboutSub(IAboutUsControls that) => that.Value<string>("aboutSub");
 
 		///<summary>
 		/// TabLeftSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("aboutTabLeftSub")]
-		public string AboutTabLeftSub => this.Value<string>("aboutTabLeftSub");
+		public string AboutTabLeftSub => GetAboutTabLeftSub(this);
+
+		/// <summary>Static getter for TabLeftSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetAboutTabLeftSub(IAboutUsControls that) => that.Value<string>("aboutTabLeftSub");
 
 		///<summary>
 		/// AboutThemeslat
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("aboutThemeslat")]
-		public IEnumerable<AboutUsThemeslatList> AboutThemeslat => this.Value<IEnumerable<AboutUsThemeslatList>>("aboutThemeslat");
+		public IEnumerable<AboutUsThemeslatList> AboutThemeslat => GetAboutThemeslat(this);
+
+		/// <summary>Static getter for AboutThemeslat</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutUsThemeslatList> GetAboutThemeslat(IAboutUsControls that) => that.Value<IEnumerable<AboutUsThemeslatList>>("aboutThemeslat");
 
 		///<summary>
 		/// CounterThemeslat
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("counterThemeslat")]
-		public IEnumerable<AboutUsThemeslatList> CounterThemeslat => this.Value<IEnumerable<AboutUsThemeslatList>>("counterThemeslat");
+		public IEnumerable<AboutUsCounterThemeSlat> CounterThemeslat => GetCounterThemeslat(this);
+
+		/// <summary>Static getter for CounterThemeslat</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutUsCounterThemeSlat> GetCounterThemeslat(IAboutUsControls that) => that.Value<IEnumerable<AboutUsCounterThemeSlat>>("counterThemeslat");
 
 		///<summary>
 		/// IconBoxHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("iconBoxHead")]
-		public string IconBoxHead => this.Value<string>("iconBoxHead");
+		public string IconBoxHead => GetIconBoxHead(this);
+
+		/// <summary>Static getter for IconBoxHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetIconBoxHead(IAboutUsControls that) => that.Value<string>("iconBoxHead");
 
 		///<summary>
 		/// IconBoxList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("iconBoxList")]
-		public IEnumerable<AboutUsIcoinList> IconBoxList => this.Value<IEnumerable<AboutUsIcoinList>>("iconBoxList");
+		public IEnumerable<AboutUsIcoinList> IconBoxList => GetIconBoxList(this);
+
+		/// <summary>Static getter for IconBoxList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutUsIcoinList> GetIconBoxList(IAboutUsControls that) => that.Value<IEnumerable<AboutUsIcoinList>>("iconBoxList");
 
 		///<summary>
 		/// IconBoxSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("iconBoxSub")]
-		public string IconBoxSub => this.Value<string>("iconBoxSub");
+		public string IconBoxSub => GetIconBoxSub(this);
+
+		/// <summary>Static getter for IconBoxSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetIconBoxSub(IAboutUsControls that) => that.Value<string>("iconBoxSub");
 
 		///<summary>
 		/// QuotePhone
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("quotePhone")]
-		public string QuotePhone => this.Value<string>("quotePhone");
+		public string QuotePhone => GetQuotePhone(this);
+
+		/// <summary>Static getter for QuotePhone</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetQuotePhone(IAboutUsControls that) => that.Value<string>("quotePhone");
 
 		///<summary>
 		/// QuoteSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("quoteSub")]
-		public string QuoteSub => this.Value<string>("quoteSub");
+		public string QuoteSub => GetQuoteSub(this);
+
+		/// <summary>Static getter for QuoteSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetQuoteSub(IAboutUsControls that) => that.Value<string>("quoteSub");
 
 		///<summary>
 		/// TabLeftSubDetailList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("tabLeftSubDetailList")]
-		public IEnumerable<AboutTabItemList> TabLeftSubDetailList => this.Value<IEnumerable<AboutTabItemList>>("tabLeftSubDetailList");
+		public IEnumerable<AboutTabItemList> TabLeftSubDetailList => GetTabLeftSubDetailList(this);
+
+		/// <summary>Static getter for TabLeftSubDetailList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutTabItemList> GetTabLeftSubDetailList(IAboutUsControls that) => that.Value<IEnumerable<AboutTabItemList>>("tabLeftSubDetailList");
 
 		///<summary>
 		/// TabLeftSubList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("tabLeftSubList")]
-		public IEnumerable<AboutUsThemeslatList> TabLeftSubList => this.Value<IEnumerable<AboutUsThemeslatList>>("tabLeftSubList");
+		public IEnumerable<AboutUsThemeslatList> TabLeftSubList => GetTabLeftSubList(this);
+
+		/// <summary>Static getter for TabLeftSubList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutUsThemeslatList> GetTabLeftSubList(IAboutUsControls that) => that.Value<IEnumerable<AboutUsThemeslatList>>("tabLeftSubList");
 
 		///<summary>
 		/// TabRightHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("tabRightHead")]
-		public string TabRightHead => this.Value<string>("tabRightHead");
+		public string TabRightHead => GetTabRightHead(this);
+
+		/// <summary>Static getter for TabRightHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetTabRightHead(IAboutUsControls that) => that.Value<string>("tabRightHead");
 
 		///<summary>
 		/// TabRightSubList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("tabRightSubList")]
-		public IEnumerable<AboutTabAccordinItemList> TabRightSubList => this.Value<IEnumerable<AboutTabAccordinItemList>>("tabRightSubList");
+		public IEnumerable<AboutTabAccordinItemList> TabRightSubList => GetTabRightSubList(this);
+
+		/// <summary>Static getter for TabRightSubList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutTabAccordinItemList> GetTabRightSubList(IAboutUsControls that) => that.Value<IEnumerable<AboutTabAccordinItemList>>("tabRightSubList");
 
 		///<summary>
 		/// TeamHead
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("teamHead")]
-		public string TeamHead => this.Value<string>("teamHead");
+		public string TeamHead => GetTeamHead(this);
+
+		/// <summary>Static getter for TeamHead</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetTeamHead(IAboutUsControls that) => that.Value<string>("teamHead");
 
 		///<summary>
 		/// TeamItemList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("teamItemList")]
-		public IEnumerable<AboutTeamList> TeamItemList => this.Value<IEnumerable<AboutTeamList>>("teamItemList");
+		public IEnumerable<AboutTeamList> TeamItemList => GetTeamItemList(this);
+
+		/// <summary>Static getter for TeamItemList</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<AboutTeamList> GetTeamItemList(IAboutUsControls that) => that.Value<IEnumerable<AboutTeamList>>("teamItemList");
 
 		///<summary>
 		/// TeamSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("teamSub")]
-		public string TeamSub => this.Value<string>("teamSub");
+		public string TeamSub => GetTeamSub(this);
+
+		/// <summary>Static getter for TeamSub</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetTeamSub(IAboutUsControls that) => that.Value<string>("teamSub");
 	}
 }
