@@ -32,9 +32,10 @@ namespace Umbraco.NoiThat.Core.Controllers
             return PartialView("~/Views/Partials/Contact/contactForm.cshtml", model);
         }
 
+        [HttpPost]
         public ActionResult SubmitForm(ContactViewModel model)
         {
-            bool success = NewMethod();
+            bool success = false;
 
             if (ModelState.IsValid)
             {
@@ -43,14 +44,8 @@ namespace Umbraco.NoiThat.Core.Controllers
 
             var contactPage = UmbracoContext.Content.GetById(false, model.ContactFormId);
 
-            ViewData["SubmitSuccess"] = success;
-            return CurrentUmbracoPage();//Success
-
+            return  Json(success ? "Gửi liên hệ thành công." : "Gửi liên hệ thất bại. Vui lòng thử lại.");
         }
 
-        private static bool NewMethod()
-        {
-            return false;
-        }
     }
 }

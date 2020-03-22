@@ -1,23 +1,51 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@using Umbraco.NoiThat.Core
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Contact>
 @using ClientDependency.Core.Mvc
 @{
-
-
+    Layout = "masterPage.cshtml";
+    //Page.Title = Model.PageTitle;
+    //Page.Description = Model.MetaDescription;
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
-
-    Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js");
-    Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js");
-    Html.RequiresJs("/scripts/jquery.validate.min.js");
-    Html.RequiresJs("/scripts/jquery.validate.unobtrusive.min.js");
-    Html.RequiresJs("/scripts/jquery.unobtrusive-ajax.min.js");
-    Html.RequiresJs("/scripts/contactForm.js");
 }
 
+@section FeaturedTitleBlock{
+    <!-- Featured Title -->
+    <div id="featured-title" class="featured-title clearfix">
+        <div id="featured-title-inner" class="container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="~/" class="trail-begin">Trang chủ</a>
+                            <span class="sep">|</span>
+                            <span class="trail-end">Liên hệ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-title-heading-wrap">
+                    <h1 class="feautured-title-heading">
+                        Liên hệ
+                    </h1>
+                </div>
+            </div><!-- /.featured-title-inner-wrap -->
+        </div><!-- /#featured-title-inner -->
+    </div>
+    <!-- End Featured Title -->
+}
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            @{ Html.RenderAction("RenderForm", "ContactSurface"); }
+            @{ Html.RenderAction("RenderForm", "ContactSurface");}
         </div>
     </div>
 </div>
+
+@section ExtendScript{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/scripts/contactForm.js"></script>
+}

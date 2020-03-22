@@ -12,8 +12,11 @@
                 form.submit();
             });
     },
-    showResult: function() {
+    showResultSuccess: function() {
         $('#form-outer').hide('slow');
+        $('#form-result').show('slow');
+    },
+    showResultFailed: function() {       
         $('#form-result').show('slow');
     }
 }
