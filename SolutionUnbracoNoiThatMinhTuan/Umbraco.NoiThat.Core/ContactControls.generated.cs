@@ -20,109 +20,94 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	// Mixin Content Type with alias "contactControl"
-	/// <summary>Contact Control</summary>
-	public partial interface IContactControl : IPublishedContent
+	// Mixin Content Type with alias "contactControls"
+	/// <summary>Contact Controls</summary>
+	public partial interface IContactControls : IPublishedContent
 	{
-		/// <summary>Contact Phone</summary>
+		/// <summary>ContactTopHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string ContactPhone { get; }
+		string ContactTopHeading { get; }
 
-		/// <summary>Message</summary>
+		/// <summary>ContactTopSub</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string Message { get; }
+		string ContactTopSub { get; }
 
-		/// <summary>SubHeading</summary>
+		/// <summary>ContactUnderHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string SubHeading { get; }
+		string ContactUnderHeading { get; }
 
-		/// <summary>Subject</summary>
+		/// <summary>ContactUnderInformation</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string Subject { get; }
-
-		/// <summary>UserName</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string UserName { get; }
+		IEnumerable<ContactInfomationList> ContactUnderInformation { get; }
 	}
 
-	/// <summary>Contact Control</summary>
-	[PublishedModel("contactControl")]
-	public partial class ContactControl : PublishedContentModel, IContactControl
+	/// <summary>Contact Controls</summary>
+	[PublishedModel("contactControls")]
+	public partial class ContactControls : PublishedContentModel, IContactControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "contactControl";
+		public new const string ModelTypeAlias = "contactControls";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactControl, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactControls, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContactControl(IPublishedContent content)
+		public ContactControls(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Contact Phone
+		/// ContactTopHeading
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("contactPhone")]
-		public string ContactPhone => GetContactPhone(this);
+		[ImplementPropertyType("contactTopHeading")]
+		public string ContactTopHeading => GetContactTopHeading(this);
 
-		/// <summary>Static getter for Contact Phone</summary>
+		/// <summary>Static getter for ContactTopHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetContactPhone(IContactControl that) => that.Value<string>("contactPhone");
+		public static string GetContactTopHeading(IContactControls that) => that.Value<string>("contactTopHeading");
 
 		///<summary>
-		/// Message
+		/// ContactTopSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("message")]
-		public string Message => GetMessage(this);
+		[ImplementPropertyType("contactTopSub")]
+		public string ContactTopSub => GetContactTopSub(this);
 
-		/// <summary>Static getter for Message</summary>
+		/// <summary>Static getter for ContactTopSub</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetMessage(IContactControl that) => that.Value<string>("message");
+		public static string GetContactTopSub(IContactControls that) => that.Value<string>("contactTopSub");
 
 		///<summary>
-		/// SubHeading
+		/// ContactUnderHeading
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("subHeading")]
-		public string SubHeading => GetSubHeading(this);
+		[ImplementPropertyType("contactUnderHeading")]
+		public string ContactUnderHeading => GetContactUnderHeading(this);
 
-		/// <summary>Static getter for SubHeading</summary>
+		/// <summary>Static getter for ContactUnderHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetSubHeading(IContactControl that) => that.Value<string>("subHeading");
+		public static string GetContactUnderHeading(IContactControls that) => that.Value<string>("contactUnderHeading");
 
 		///<summary>
-		/// Subject
+		/// ContactUnderInformation
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("subject")]
-		public string Subject => GetSubject(this);
+		[ImplementPropertyType("contactUnderInformation")]
+		public IEnumerable<ContactInfomationList> ContactUnderInformation => GetContactUnderInformation(this);
 
-		/// <summary>Static getter for Subject</summary>
+		/// <summary>Static getter for ContactUnderInformation</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetSubject(IContactControl that) => that.Value<string>("subject");
-
-		///<summary>
-		/// UserName
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("userName")]
-		public string UserName => GetUserName(this);
-
-		/// <summary>Static getter for UserName</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetUserName(IContactControl that) => that.Value<string>("userName");
+		public static IEnumerable<ContactInfomationList> GetContactUnderInformation(IContactControls that) => that.Value<IEnumerable<ContactInfomationList>>("contactUnderInformation");
 	}
 }

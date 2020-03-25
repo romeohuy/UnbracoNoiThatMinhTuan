@@ -1,13 +1,136 @@
 ﻿@using Umbraco.NoiThat.Core
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Blogs>
 @{
-	Layout = "masterPage.cshtml";
+    Layout = "masterPageBlogs.cshtml";
+    // Page.Title = Model.PageTitle;
+    //  Page.Description = Model.MetaDescription;
 }
+@{
+    var BlogList = Model.Children.Cast<BlogDetail>();
 
+
+}
 @* the fun starts here *@
-@foreach (var item in Model.Children())
-{
-    var blogDetail = (Blog) item;
-    <div>@blogDetail.Name</div><br/>
+
+@section FeaturedTitleBlock{
+    <div id="featured-title" class="featured-title clearfix">
+        <div id="featured-title-inner" class="container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="index.html" class="trail-begin">Trang chủ</a>
+                            <span class="sep">|</span>
+                            <span class="trail-end">Blogs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-title-heading-wrap">
+                    <h1 class="feautured-title-heading">
+                        Blogs
+                    </h1>
+                </div>
+            </div><!-- /.featured-title-inner-wrap -->
+        </div><!-- /#featured-title-inner -->
+    </div>
 }
 
+<div id="site-content" class="site-content clearfix">
+    <div id="inner-content" class="inner-content-wrap">
+        @foreach (var _BlogDetail in BlogList)
+        {          
+                String _datetime = string.Format("{0:dd MMM yyyy}", @_BlogDetail.BlogDetailDate);
+                string[] arrListStr = _datetime.Split(' ');
+            
+            <article class="hentry data-effect">
+                <div class="post-media has-effect-icon offset-v-25 offset-h-24 data-effect-item clerafix">
+                    <a href="@_BlogDetail.Url"><img src="@_BlogDetail.BlogDetailImage.Url" alt="Image"></a>
+                    <div class="post-calendar">
+                        <span class="inner">
+                            <span class="entry-calendar">
+                                <span class="day">@arrListStr[0]</span>
+                                <span class="month">@arrListStr[1]</span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="overlay-effect bg-color-1"></div>
+                    <div class="elm-link">
+                        <a href="@_BlogDetail.Url" class="icon-1"></a>
+                    </div>
+                </div><!-- /.post-media -->
+                <div class="post-content-wrap clearfix">
+                    <h2 class="post-title">
+                        <span class="post-title-inner">
+                            <a href="@_BlogDetail.Url">@_BlogDetail.BlogDeatilTitle</a>
+                        </span>
+                    </h2><!-- /.post-title -->
+                    <div class="post-meta">
+                        <div class="post-meta-content">
+                            <div class="post-meta-content-inner">
+                                <span class="post-date item"><span class="inner"><span class="entry-date">@_datetime</span></span></span>
+                                <span class="post-by-author item"><span class="inner"><a href="#">By @_BlogDetail.BlogDetailAuthor</a></span></span>
+                            </div>
+                        </div>
+                    </div><!-- /.post-meta -->
+                    <div class="post-content post-excerpt">
+                        <p>@_BlogDetail.BlogDetailSub</p>
+                    </div><!-- /.post-excerpt -->
+                    <div class="post-read-more">
+                        <div class="post-link">
+                            <a href="@_BlogDetail.Url">CHI TIET</a>
+                        </div>
+                    </div>
+                </div><!-- /.post-content-wrap -->
+            </article><!-- /.hentry -->
+        }
+    </div><!-- /#inner-content -->
+</div><!-- /#site-content -->
+
+<div id="sidebar">
+    <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="60" data-smobile="60"></div>
+    <div id="inner-sidebar" class="inner-content-wrap">
+        <div class="widget widget_search">
+            <form action="#" method="get" role="search" class="search-form style-1">
+                <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for">
+                <button class="search-submit" type="submit" title="Search">Search</button>
+            </form>
+        </div><!-- /.widget_search -->
+        <div class="widget widget_follow">
+            <h2 class="widget-title"><span>FOLLOW US</span></h2>
+            <div class="follow-wrap clearfix col3 g8">
+                @foreach (var _BlogIconListl in Model.BlogIconList)
+                {                    
+                        <div class="follow-item @_BlogIconListl.BlogIconClass">
+                            <div class="inner">
+                                <span class="socials">
+                                    <a href="@_BlogIconListl.BlogIconUrl.Url"><i class="fa fa-@_BlogIconListl.BlogIconClass"></i></a>
+                                    <span class="text">@_BlogIconListl.BlogIconSub likes</span>
+                                </span>
+                            </div>
+                        </div>
+                }
+            </div>
+        </div><!-- /.widget_follow -->
+        <div class="widget widget_lastest">
+            <h2 class="widget-title"><span>PRECENT POST</span></h2>
+            <ul class="lastest-posts data-effect clearfix">
+                @foreach (var _BlogDetail in BlogList)
+                {
+                    <li class="clearfix">
+                        <div class="thumb data-effect-item has-effect-icon ">
+                            <img src="@_BlogDetail.BlogDetailImage.Url" alt="Image">
+                            <div class="overlay-effect bg-color-2"></div>
+                            <div class="elm-link">
+                                <a href="@_BlogDetail.Url" class="icon-2"></a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h3><a href="@_BlogDetail.Url">@_BlogDetail.BlogDeatilTitle</a></h3>
+                            <span class="post-date"><span class="entry-date">@_BlogDetail.BlogDetailDate</span></span>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div><!-- /.widget_lastest -->
+    </div>
+</div><!-- /#sidebar -->

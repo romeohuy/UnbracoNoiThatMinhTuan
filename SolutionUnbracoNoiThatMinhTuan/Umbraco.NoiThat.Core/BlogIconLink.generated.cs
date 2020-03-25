@@ -20,29 +20,50 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Blog</summary>
-	[PublishedModel("blog")]
-	public partial class Blog : PublishedContentModel
+	/// <summary>Blog Icon Link</summary>
+	[PublishedModel("blogIconLink")]
+	public partial class BlogIconLink : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "blog";
+		public new const string ModelTypeAlias = "blogIconLink";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blog, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlogIconLink, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Blog(IPublishedContent content)
+		public BlogIconLink(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
+
+		///<summary>
+		/// BlogIconClass
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("blogIconClass")]
+		public string BlogIconClass => this.Value<string>("blogIconClass");
+
+		///<summary>
+		/// Blog Icon Sub
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("blogIconSub")]
+		public string BlogIconSub => this.Value<string>("blogIconSub");
+
+		///<summary>
+		/// BlogIconUrl
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("blogIconUrl")]
+		public Umbraco.Web.Models.Link BlogIconUrl => this.Value<Umbraco.Web.Models.Link>("blogIconUrl");
 	}
 }

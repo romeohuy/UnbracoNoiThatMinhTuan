@@ -20,85 +20,92 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.NoiThat.Core
 {
-	/// <summary>Blogs</summary>
-	[PublishedModel("blogs")]
-	public partial class Blogs : PublishedContentModel, IGeneralControls, ISEocontrols
+	/// <summary>Blog Detail</summary>
+	[PublishedModel("blogDetail")]
+	public partial class BlogDetail : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "blogs";
+		public new const string ModelTypeAlias = "blogDetail";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blogs, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlogDetail, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Blogs(IPublishedContent content)
+		public BlogDetail(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// BlogIconList
+		/// BlogDeatilTitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("blogIconList")]
-		public IEnumerable<BlogIconLink> BlogIconList => this.Value<IEnumerable<BlogIconLink>>("blogIconList");
+		[ImplementPropertyType("blogDeatilTitle")]
+		public string BlogDeatilTitle => this.Value<string>("blogDeatilTitle");
 
 		///<summary>
-		/// PageMainDescription
+		/// BlogDetailAuthor
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("pageMainDescription")]
-		public IHtmlString PageMainDescription => GeneralControls.GetPageMainDescription(this);
+		[ImplementPropertyType("blogDetailAuthor")]
+		public string BlogDetailAuthor => this.Value<string>("blogDetailAuthor");
 
 		///<summary>
-		/// PageMainImage
+		/// BlogDetailDate
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("pageMainImage")]
-		public IPublishedContent PageMainImage => GeneralControls.GetPageMainImage(this);
+		[ImplementPropertyType("blogDetailDate")]
+		public DateTime BlogDetailDate => this.Value<DateTime>("blogDetailDate");
 
 		///<summary>
-		/// Page Short Content
+		/// BlogDetailImage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("pageShortContent")]
-		public IHtmlString PageShortContent => GeneralControls.GetPageShortContent(this);
+		[ImplementPropertyType("blogDetailImage")]
+		public IPublishedContent BlogDetailImage => this.Value<IPublishedContent>("blogDetailImage");
 
 		///<summary>
-		/// PageTitle
+		/// BlogDetailSub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("pageTitle")]
-		public string PageTitle => GeneralControls.GetPageTitle(this);
+		[ImplementPropertyType("blogDetailSub")]
+		public string BlogDetailSub => this.Value<string>("blogDetailSub");
 
 		///<summary>
-		/// Meta Description
+		/// BlogMainImage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("metaDescription")]
-		public string MetaDescription => SEocontrols.GetMetaDescription(this);
+		[ImplementPropertyType("blogMainImage")]
+		public IPublishedContent BlogMainImage => this.Value<IPublishedContent>("blogMainImage");
 
 		///<summary>
-		/// Meta Keywords
+		/// BlogMainSubBottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("metaKeywords")]
-		public IEnumerable<string> MetaKeywords => SEocontrols.GetMetaKeywords(this);
+		[ImplementPropertyType("blogMainSubBottom")]
+		public string BlogMainSubBottom => this.Value<string>("blogMainSubBottom");
 
 		///<summary>
-		/// Meta Name
+		/// BlogMainSubMidile
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("metaName")]
-		public string MetaName => SEocontrols.GetMetaName(this);
+		[ImplementPropertyType("blogMainSubMidile")]
+		public string BlogMainSubMidile => this.Value<string>("blogMainSubMidile");
+
+		///<summary>
+		/// BlogMainSubTop
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("blogMainSubTop")]
+		public string BlogMainSubTop => this.Value<string>("blogMainSubTop");
 	}
 }

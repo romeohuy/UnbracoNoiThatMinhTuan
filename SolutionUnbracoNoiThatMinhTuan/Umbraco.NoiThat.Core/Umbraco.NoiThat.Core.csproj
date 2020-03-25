@@ -398,7 +398,13 @@
     <Compile Include="AboutUsThemeslatList.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Blog.generated.cs">
+    <Compile Include="AddressDetailItem.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlogDetail.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlogIconLink.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Blogs.generated.cs">
@@ -414,7 +420,10 @@
     <Compile Include="Contact.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContactControl.generated.cs">
+    <Compile Include="ContactControls.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactInfomationList.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ContactSurfaceController.cs" />
@@ -484,9 +493,9 @@
       <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="ModelsBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

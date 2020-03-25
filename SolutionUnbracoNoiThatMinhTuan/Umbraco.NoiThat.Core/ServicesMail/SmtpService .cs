@@ -20,11 +20,11 @@ namespace Umbraco.NoiThat.Core.ServicesMail
         {
             try
             {
-                var frommail = new MailAddress("khanhqbl@gmail.com");
-                var Pass = "bongSon@2007";
-                var tomail = new MailAddress(model.Email);
-                string Title = "You have register event in prevail Events";
-                string Message = "Location Name: " + model.Name + " \n\nLocation Address: " + model.Email + " \n\nStart Date Time: " + model.Message;
+                var frommail = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["NTMTMail"]);
+                var Pass = System.Configuration.ConfigurationManager.AppSettings["EmailPass"];
+                var tomail = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["NTMTSupport"]);
+                string Title = "You have Message from NTMT";
+                string Message = " Name: " + model.Name + " Phone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nNoi Dung: " + model.Message;
                 var smtp = new System.Net.Mail.SmtpClient()
                 {
                     Host = "smtp.gmail.com",

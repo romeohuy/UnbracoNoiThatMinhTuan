@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
+<body class="header-fixed sidebar-right header-style-2 topbar-style-1 menu-has-search">
 
     <div id="wrapper" class="animsition">
         <div id="page" class="clearfix">
@@ -49,21 +49,15 @@
             @RenderSection("FeaturedTitleBlock", required: false)
             <!-- Main Content -->
             <div id="main-content" class="site-main clearfix">
-                <div id="content-wrap">
-                    <div id="site-content" class="site-content clearfix">
-                        <div id="inner-content" class="inner-content-wrap">
-                            <div class="page-content">
-                                <!--Main content page-->
-                                @RenderBody()
-                                <!--End Main content page-->
-                            </div><!-- /.page-content -->
-                        </div><!-- /#inner-content -->
-                    </div><!-- /#site-content -->
-                    @RenderSection("RightSideBlogs", required: false);
+                <div id="content-wrap" class="container">
+
+                    <!--Main content page-->
+                    @RenderBody()
+                    <!--End Main content page-->
                 </div><!-- /#content-wrap -->
             </div><!-- /#main-content -->
-            <!-- Footer -->
 
+            
             @Html.Partial("~/Views/Partials/FooterPartial.cshtml")
         </div><!-- /#page -->
     </div><!-- /#wrapper -->
