@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>Contact</summary>
 	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel, IContactControls, IIconLinkItems, ITopBarHeaderControl
+	public partial class Contact : PublishedContentModel, IContactControls, IGeneralControls, IIconLinkItems, ISEocontrols, ITopBarHeaderControl
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -74,6 +74,34 @@ namespace Umbraco.NoiThat.Core
 		public IEnumerable<ContactInfomationList> ContactUnderInformation => ContactControls.GetContactUnderInformation(this);
 
 		///<summary>
+		/// PageMainDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainDescription")]
+		public IHtmlString PageMainDescription => GeneralControls.GetPageMainDescription(this);
+
+		///<summary>
+		/// PageMainImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainImage")]
+		public IPublishedContent PageMainImage => GeneralControls.GetPageMainImage(this);
+
+		///<summary>
+		/// Page Short Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageShortContent")]
+		public IHtmlString PageShortContent => GeneralControls.GetPageShortContent(this);
+
+		///<summary>
+		/// PageTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => GeneralControls.GetPageTitle(this);
+
+		///<summary>
 		/// Icon Class
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -86,6 +114,27 @@ namespace Umbraco.NoiThat.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("link")]
 		public Umbraco.Web.Models.Link Link => IconLinkItems.GetLink(this);
+
+		///<summary>
+		/// Meta Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription => SEocontrols.GetMetaDescription(this);
+
+		///<summary>
+		/// Meta Keywords
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaKeywords")]
+		public IEnumerable<string> MetaKeywords => SEocontrols.GetMetaKeywords(this);
+
+		///<summary>
+		/// Meta Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaName")]
+		public string MetaName => SEocontrols.GetMetaName(this);
 
 		///<summary>
 		/// Address

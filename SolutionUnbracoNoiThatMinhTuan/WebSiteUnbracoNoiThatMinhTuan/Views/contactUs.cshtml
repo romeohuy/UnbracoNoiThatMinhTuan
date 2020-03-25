@@ -3,10 +3,13 @@
 @using ClientDependency.Core.Mvc
 @{
     Layout = "masterPage.cshtml";
-    //Page.Title = Model.PageTitle;
-    //Page.Description = Model.MetaDescription;
+    Page.Title = Model.PageTitle;
+    Page.MetaDescription = Model.MetaDescription;
+    Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
+
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
+
 }
 
 @section FeaturedTitleBlock{

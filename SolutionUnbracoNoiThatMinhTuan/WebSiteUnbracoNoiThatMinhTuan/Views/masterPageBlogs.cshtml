@@ -17,7 +17,14 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>@Page.Title</title>
 
-    <meta name="description" content="@Page.Description">
+    <meta name="subject" content="@Page.Title">
+    <meta name="keywords" content="@Page.MetaKeywords" />
+    <meta name="description" content="@Page.MetaDescription">
+
+    <meta name="og:title" content="@Page.Title" />
+    <meta name="og:url" content="@Request.Url" />
+    <meta name="og:image" content="@Page.MainImageUrl" />
+    <meta name="og:description" content="@Page.MetaDescription" />
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

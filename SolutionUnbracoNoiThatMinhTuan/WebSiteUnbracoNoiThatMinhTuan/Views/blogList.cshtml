@@ -7,7 +7,9 @@
 }
 @{
     var BlogList = Model.Children.Cast<BlogDetail>();
-
+    Page.Title = Model.PageTitle;
+    Page.MetaDescription = Model.MetaDescription;
+    Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
 
 }
 @* the fun starts here *@

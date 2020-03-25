@@ -4,7 +4,8 @@
 @{
     Layout = "masterPage.cshtml";
     Page.Title = Model.PageTitle;
-    Page.Description = Model.MetaDescription;
+    Page.MetaDescription = Model.MetaDescription;
+    Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
 }
 @{
     var projectDetailList = Model.Children.Cast<ProjectDetail>();
