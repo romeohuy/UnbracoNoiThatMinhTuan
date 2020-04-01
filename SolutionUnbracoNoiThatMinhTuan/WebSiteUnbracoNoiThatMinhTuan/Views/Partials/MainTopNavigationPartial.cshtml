@@ -8,13 +8,17 @@
     It also highlights the current active page/section in the navigation with the CSS class "current".
 *@
 
-@{ var selection = Model.Root().Children.Where(x => x.IsVisible()).ToArray(); }
+@{ var selection = Model.Root().Children.Where(x => x.GetTemplateAlias() != "externalPages" && x.IsVisible()).ToArray(); }
 
 @if (selection.Length > 0)
 {
     
     <nav id="main-nav" class="main-nav">
         <ul id="menu-primary-menu" class="menu">
+            <li class="menu-item">
+                <a href="/">Trang Chủ</a>
+            </li>
+
             @foreach (var item in selection)
             {
                 <li class="menu-item menu-item-has-children @(item.IsAncestorOrSelf(Model) ? "current-menu-item" : null)">
@@ -25,52 +29,7 @@
                     </ul>*@
                 </li>
             }
-            
-            @*<li class="menu-item menu-item-has-children">
-                <a href="page-about.html">ABOUT US </a>
-                <ul class="sub-menu">
-                    <li class="menu-item"><a href="page-about.html">ABOUT US</a></li>
-                    <li class="menu-item"><a href="page-about-detail.html">ABOUT DETAIL</a></li>
-                    <li class="menu-item"><a href="page-about-team.html">ABOUT TEAM</a></li>
-                    <li class="menu-item"><a href="page-about-careers.html">ABOUT CAREERS</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="page-services.html">SERVICES</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"><a href="page-services.html">SERVICES</a></li>
-                    <li class="menu-item"><a href="page-services-detail.html">SERVICES DETAIL</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="page-projects.html">PROJECTS</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"><a href="page-projects.html">PROJECTS</a></li>
-                    <li class="menu-item"><a href="page-projects-full.html">PROJECTS FULL WIDTH</a></li>
-                    <li class="menu-item"><a href="page-project-detail.html">PROJECTS DETAIL</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="page-testimonial.html">PAGE</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"><a href="page-testimonial.html">PAGE TESTIMONIAL</a></li>
-                    <li class="menu-item"><a href="page-pricing.html">PAGE PRICING</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="page-blog.html">BLOG</a>
-                <ul class="sub-menu right-sub-menu">
-                    <li class="menu-item"><a href="page-blog.html">BLOG</a></li>
-                    <li class="menu-item"><a href="page-blog-single.html">BLOG SINGLE</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="page-contact.html">CONTACT</a>
-                <ul class="sub-menu right-sub-menu">
-                    <li class="menu-item"><a href="page-contact.html">CONTACT 1</a></li>
-                    <li class="menu-item"><a href="page-contact-2.html">CONTACT 2</a></li>
-                </ul>
-            </li>*@
+
         </ul>
     </nav>
 }

@@ -95,6 +95,34 @@ namespace Umbraco.NoiThat.Core
 		public string HomeAboutUsTitle => this.Value<string>("homeAboutUsTitle");
 
 		///<summary>
+		/// ThietKeNoiThatChiTiet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("thietKeNoiThatChiTiet")]
+		public IHtmlString ThietKeNoiThatChiTiet => this.Value<IHtmlString>("thietKeNoiThatChiTiet");
+
+		///<summary>
+		/// ThietKeNoiThatTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("thietKeNoiThatTitle")]
+		public string ThietKeNoiThatTitle => this.Value<string>("thietKeNoiThatTitle");
+
+		///<summary>
+		/// XuongThiCongChiTiet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("xuongThiCongChiTiet")]
+		public IHtmlString XuongThiCongChiTiet => this.Value<IHtmlString>("xuongThiCongChiTiet");
+
+		///<summary>
+		/// XuongThiCongTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("xuongThiCongTitle")]
+		public string XuongThiCongTitle => this.Value<string>("xuongThiCongTitle");
+
+		///<summary>
 		/// FeatureProjectContentList
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

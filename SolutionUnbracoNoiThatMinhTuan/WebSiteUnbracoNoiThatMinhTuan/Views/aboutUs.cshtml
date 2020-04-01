@@ -5,6 +5,31 @@
 
 }
 
+@section FeaturedTitleBlock{
+    <!-- Featured Title -->
+    <div id="featured-title" class="featured-title clearfix">
+        <div id="featured-title-inner" class="container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="~/" class="trail-begin">Trang chủ</a>
+                            <span class="sep">|</span>
+                            <span class="trail-end">@Model.PageTitle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-title-heading-wrap">
+                    <h1 class="feautured-title-heading">
+                        @Model.PageTitle
+                    </h1>
+                </div>
+            </div><!-- /.featured-title-inner-wrap -->
+        </div><!-- /#featured-title-inner -->
+    </div>
+    <!-- End Featured Title -->
+}
+
 <!-- ICONBOX -->
 <div class="row-iconbox">
     <div class="container">
@@ -57,7 +82,6 @@
     </div><!-- /.container -->
 </div>
 <!-- END ICONBOX -->
-
 <!-- ABOUT -->
 <div class="row-about">
     <div class="container-fluid">
@@ -98,7 +122,6 @@
     </div><!-- /.container-fluid -->
 </div>
 <!-- END ABOUT -->
-
 <!-- COUNTER -->
 <div class="row-counter parallax parallax-4 parallax-overlay">
     <div class="container">
@@ -138,7 +161,6 @@
     <div class="bg-parallax-overlay overlay-black style2"></div>
 </div>
 <!-- END COUNTER -->
-
 <!-- TABS -->
 <div class="row-tabs">
     <div class="container">
@@ -218,7 +240,6 @@
     </div><!-- /.container -->
 </div>
 <!-- END TABS -->
-
 <!-- QUOTE -->
 <div class="row-quote bg-row-1">
     <div class="container">
@@ -243,7 +264,6 @@
     </div><!-- /.container -->
 </div>
 <!-- END QUOTE -->
-
 <!-- TEAM -->
 <div class="row-team">
     <div class="container">
@@ -276,7 +296,7 @@
                                                 {
                                                     <li class="@_TeamSocial.IconClass"><a href="@_TeamSocial.Link.Url"><i class="autora-icon-@_TeamSocial.IconClass"></i></a></li>
                                                 }
-                                                </ul>
+                                            </ul>
                                             <div class="overlay-effect bg-color-4"></div>
                                         </div>
                                         <div class="text-wrap">
@@ -287,7 +307,7 @@
                                 </div>
                             </div><!-- /.themesflat-team -->
                         }
-                        </div><!-- /.owl-carousel -->
+                    </div><!-- /.owl-carousel -->
                 </div><!-- /.themesflat-carousel -->
                 <div class="themesflat-spacer clearfix" data-desktop="80" data-mobile="60" data-smobile="60"></div>
             </div><!-- /.col-md-12 -->

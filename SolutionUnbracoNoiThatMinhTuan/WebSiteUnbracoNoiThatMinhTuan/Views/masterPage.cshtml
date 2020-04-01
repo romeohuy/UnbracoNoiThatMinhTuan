@@ -47,7 +47,7 @@
 
 </head>
 
-<body class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
+<body class="header-fixed page no-sidebar @(Page.BodyTagCss != null && Page.BodyTagCss != "" ? "header-style-3 topbar-style-3" : "header-style-2 topbar-style-2" ) @Page.BodyTagCss menu-has-search">
 
     <div id="wrapper" class="animsition">
         <div id="page" class="clearfix">
