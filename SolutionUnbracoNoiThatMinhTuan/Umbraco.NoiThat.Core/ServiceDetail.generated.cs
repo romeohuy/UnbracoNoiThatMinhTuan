@@ -81,6 +81,13 @@ namespace Umbraco.NoiThat.Core
 		public string PageTitle => GeneralControls.GetPageTitle(this);
 
 		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => GeneralControls.GetUmbracoNaviHide(this);
+
+		///<summary>
 		/// General Slide List Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

@@ -39,6 +39,10 @@ namespace Umbraco.NoiThat.Core
 		/// <summary>PageTitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		string PageTitle { get; }
+
+		/// <summary>umbracoNaviHide</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		bool UmbracoNaviHide { get; }
 	}
 
 	/// <summary>General Controls</summary>
@@ -109,5 +113,16 @@ namespace Umbraco.NoiThat.Core
 		/// <summary>Static getter for PageTitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static string GetPageTitle(IGeneralControls that) => that.Value<string>("pageTitle");
+
+		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => GetUmbracoNaviHide(this);
+
+		/// <summary>Static getter for umbracoNaviHide</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static bool GetUmbracoNaviHide(IGeneralControls that) => that.Value<bool>("umbracoNaviHide");
 	}
 }

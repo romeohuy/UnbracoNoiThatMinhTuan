@@ -22,7 +22,7 @@ namespace Umbraco.NoiThat.Core
 {
 	/// <summary>ExternalPages</summary>
 	[PublishedModel("externalPages")]
-	public partial class ExternalPages : PublishedContentModel
+	public partial class ExternalPages : PublishedContentModel, IGeneralControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,5 +44,40 @@ namespace Umbraco.NoiThat.Core
 		{ }
 
 		// properties
+
+		///<summary>
+		/// PageMainDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainDescription")]
+		public IHtmlString PageMainDescription => GeneralControls.GetPageMainDescription(this);
+
+		///<summary>
+		/// PageMainImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageMainImage")]
+		public IPublishedContent PageMainImage => GeneralControls.GetPageMainImage(this);
+
+		///<summary>
+		/// Page Short Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageShortContent")]
+		public IHtmlString PageShortContent => GeneralControls.GetPageShortContent(this);
+
+		///<summary>
+		/// PageTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => GeneralControls.GetPageTitle(this);
+
+		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => GeneralControls.GetUmbracoNaviHide(this);
 	}
 }

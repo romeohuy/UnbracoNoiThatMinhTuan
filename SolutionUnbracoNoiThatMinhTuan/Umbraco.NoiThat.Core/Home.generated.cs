@@ -67,6 +67,13 @@ namespace Umbraco.NoiThat.Core
 		public string Email => this.Value<string>("email");
 
 		///<summary>
+		/// footerFanpageFacebook
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerFanpageFacebook")]
+		public string FooterFanpageFacebook => this.Value<string>("footerFanpageFacebook");
+
+		///<summary>
 		/// footerMap
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -177,6 +184,13 @@ namespace Umbraco.NoiThat.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle => GeneralControls.GetPageTitle(this);
+
+		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => GeneralControls.GetUmbracoNaviHide(this);
 
 		///<summary>
 		/// HomeMainSlide
