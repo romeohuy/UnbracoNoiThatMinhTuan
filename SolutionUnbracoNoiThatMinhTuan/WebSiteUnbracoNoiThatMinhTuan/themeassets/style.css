@@ -913,7 +913,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Scroll Top
 -------------------------------------------------------------- */
-#scroll-top { position: fixed; display: block; width: 35px; height: 35px; line-height: 35px; text-align: center; z-index: 1; right: 14px; bottom: 23px; opacity: 0; visibility: hidden; cursor: pointer; overflow: hidden; }
+#scroll-top { position: fixed; display: block; width: 35px; height: 35px; line-height: 35px; text-align: center; z-index: 1; right: 14px; bottom: 50px; opacity: 0; visibility: hidden; cursor: pointer; overflow: hidden; }
 
 #scroll-top.show { right: 24px; opacity: 1; visibility: visible; }
 #scroll-top:before,
@@ -971,6 +971,19 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 /* Boxed
 -------------------------------------------------------------- */
 .home-boxed #page {z-index: 0;	width: 92.708%;	margin: 0 auto;	background: #fff;height: 100%;overflow: hidden;	-webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.02); -moz-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.02);   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.02);}
+
+/* Bottom button action */
+#btnDangKyThiCong {
+    position: fixed;
+    bottom: 0;
+    width: 250px;
+    z-index: 1000;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    right:0;
+    color:white;
+}
 
 /* Media Queries
 -------------------------------------------------------------- */
