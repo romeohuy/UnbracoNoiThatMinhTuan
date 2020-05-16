@@ -22,13 +22,13 @@
                         <div class="breadcrumb-trail">
                             <a href="~/" class="trail-begin">Trang chủ</a>
                             <span class="sep">|</span>
-                            <span class="trail-end">Dự án đã hoàn thành</span>
+                            <span class="trail-end">Hình ảnh thi công</span>
                         </div>
                     </div>
                 </div>
                 <div class="featured-title-heading-wrap">
                     <h1 class="feautured-title-heading">
-                        Dự án đã hoàn thành
+                        Hình ảnh thi công
                     </h1>
                 </div>
             </div><!-- /.featured-title-inner-wrap -->
@@ -69,27 +69,26 @@
                     {
                         var categoryName = string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString));//projectDetail.CategoriesDropdownList != null ? string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString)) : string.Empty;
 
-                            <div class="project-item @categoryName villa">
+                        <div class="project-item @categoryName villa">
                             <div class="inner">
                                 <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
                                     @if (projectDetail.PageMainImage != null)
                                     {
                                         <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                    }else
+                                    {
+                                        <img src = "/themeassets/not-available.png" />
                                     }
-                                    <div class="elm-link">
-                                        @*<a href="#" class="icon-1 icon-search"></a>*@
-                                        <a href="@projectDetail.Url" class="icon-1"></a>
-                                    </div>
-                                    <div class="overlay-effect bg-color-3"></div>
+                                   
                                 </div>
                                 <div class="text-wrap">
                                     <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
-                                    <div class="elm-meta">
+                                    @*<div class="elm-meta">
                                         @foreach (var tag in projectDetail.MetaKeywords.ToList())
                                         {
                                             <span><a href="#">@tag</a></span>
                                         }
-                                    </div>
+                                    </div>*@
                                 </div>
                             </div>
                         </div><!-- /.product-item -->

@@ -22,40 +22,34 @@
                     <p class="sub-heading">@Model.FeatureProjectIntro</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="30" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-carousel-box clearfix" data-gap="30" data-column="4" data-column2="2" data-column3="1" data-auto="false">
-                    <div class="owl-carousel owl-theme">
-                        @foreach (var item in Model.FeatureProjectContentItems)
-                        {
-                            if (item.FeatureProjectContentSelected is ProjectDetail projectDetail)
-                            {
 
-                                <div class="themesflat-project style-1 data-effect  clearfix">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
-                                                <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
-                                                <div class="text-wrap text-center">
-                                                    <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
-                                                    <div class="elm-meta">
-                                                        @foreach (var tag in projectDetail.MetaKeywords)
-                                                        {
-                                                            <span><a href="#">@tag</a></span>
-                                                        }
-                                                    </div>
-                                                </div>
-                                                <div class="elm-link">
-                                                    <a href="@projectDetail.Url" class="icon-1 icon-search"></a>
-                                                    <a href="@projectDetail.Url" class="icon-1"></a>
-                                                </div>
-                                                <div class="overlay-effect bg-color-3"></div>
-                                            </div>
-                                        </div>
+                <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
+                    @foreach (var item in Model.FeatureProjectContentItems)
+                    {
+                        if (item.FeatureProjectContentSelected is ProjectDetail projectDetail)
+                        {
+                            <div class="project-item villa">
+                                <div class="inner">
+                                    <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
+                                        @if (projectDetail.PageMainImage != null)
+                                        {
+                                            <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                        }
+                                        else
+                                        {
+                                            <img src="/themeassets/not-available.png" />
+                                        }
+
                                     </div>
-                                </div><!-- /.themesflat-project -->
-                            }
+                                    <div class="text-wrap">
+                                        <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
+                                    </div>
+                                </div>
+                            </div><!-- /.product-item -->
                         }
-                    </div>
-                </div><!-- /.themesflat-carousel-box -->
+                    }
+                </div><!-- /.themesflat-project -->
+                
                 <div class="themesflat-spacer clearfix" data-desktop="41" data-mobile="35" data-smobile="35"></div>
                 <div class="elm-button text-center">
                     <a href="~/projects" class="themesflat-button bg-accent">TẤT CẢ</a>

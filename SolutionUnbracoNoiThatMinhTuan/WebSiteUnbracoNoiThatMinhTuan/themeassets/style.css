@@ -226,7 +226,7 @@ input[type="submit"]:focus { outline: 0; background-color: #222; }
 /* Placeholder color */
 ::-webkit-input-placeholder { color: #999; }
 :-moz-placeholder { color: #999; }
-::-moz-placeholder { color: #999; opacity: 1; }/* Since FF19 lowers the opacity of the placeholder by default */ }
+::-moz-placeholder { color: #999; opacity: 1; }/* Since FF19 lowers the opacity of the placeholder by default */ 
 :-ms-input-placeholder { color: #999; }
 
 /* Links */
@@ -601,14 +601,17 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .header-style-3.menu-has-search #site-header #main-nav { right: 44px; }
 
 .header-style-3 #site-header .header-search-icon,
-.header-style-3 #site-header #main-nav > ul > li > a { color: #fff; }
+/*.header-style-3 #site-header #main-nav > ul > li > a { color: #fff; }*/
 .header-style-3 #site-header #main-nav > ul > li.current-menu-item > a,
 .header-style-3 #site-header #main-nav > ul > li:hover > a { color: #ffc30c; }
 .header-style-3 #site-header .header-search-icon,
 .header-style-3 #main-nav > ul > li > a { line-height: 99px; }
 .header-style-3 #site-header .wrap-inner { padding: 30px 0px; }
 
-.header-style-3 #site-header.is-fixed.is-small { background-color: #3e3e3e; }
+.header-style-3 #site-header.is-fixed.is-small {
+     /*background-color: #3e3e3e;*/
+     background-color: white;
+}
 
 /* Absolute */
 .site-header-absolute #site-header-wrap { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; }
@@ -1125,4 +1128,19 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .comment-list.style-2 article .gravatar { margin: 0px; }
 
+}
+
+#dangkythicongModal {
+    margin-top: 5%;
+}
+
+.owl-thumb-item img {
+    max-height: 120px;
+    width: 100%;
+}
+
+.project-item img{
+    max-height: 200px;
+    height: 100%;
+    width: 100%;
 }

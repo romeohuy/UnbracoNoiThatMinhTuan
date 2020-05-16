@@ -3,7 +3,8 @@
     Layout = "masterPage.cshtml";
     Page.Title = Model.PageTitle;
     Page.MetaDescription = Model.MetaDescription;
-    Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
+    Page.MetaKeywords = (Model.MetaKeywords != null) ? string.Join(", ", Model.MetaKeywords.ToList()) : string.Empty;
+    Page.MainImageUrl = (Model.PageMainImage != null) ? Model.PageMainImage.Url : string.Empty;
 }
 
 @* the fun starts here *@

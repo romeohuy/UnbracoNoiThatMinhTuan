@@ -46,6 +46,13 @@ namespace Umbraco.NoiThat.Core
 		// properties
 
 		///<summary>
+		/// Danh sách hình
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("danhSachHinh")]
+		public IEnumerable<IPublishedContent> DanhSachHinh => this.Value<IEnumerable<IPublishedContent>>("danhSachHinh");
+
+		///<summary>
 		/// Project Dictionary Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

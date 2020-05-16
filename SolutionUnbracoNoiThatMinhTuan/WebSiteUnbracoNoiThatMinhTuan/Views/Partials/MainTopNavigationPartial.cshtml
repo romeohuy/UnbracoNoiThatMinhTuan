@@ -21,13 +21,26 @@
 
             @foreach (var item in selection)
             {
-                <li class="menu-item menu-item-has-children @(item.IsAncestorOrSelf(Model) ? "current-menu-item" : null)">
+                
+            <li class="menu-item menu-item-has-children @(item.IsAncestorOrSelf(Model) ? "current-menu-item" : null)">
+                @if (item.ContentType.Alias.Equals("externalPages"))
+                {
+                    <a href="#">@item.Name</a>
+                    if (item.Children.Any())
+                    {
+                        <ul class="sub-menu">
+                            @foreach (var childItem in item.Children)
+                            {
+                                <li class="menu-item"><a href="@childItem.Url">@childItem.Name</a></li>
+                            }
+                        </ul>
+                    }
+                }
+                else
+                {
                     <a href="@item.Url">@item.Name</a>
-                    @*<ul class="sub-menu">
-                        <li class="menu-item"><a href="index.html">HOME 1</a></li>
-                        <li class="menu-item current-item"><a href="home-2.html">HOME 2</a></li>
-                    </ul>*@
-                </li>
+                }
+            </li>
             }
 
         </ul>
