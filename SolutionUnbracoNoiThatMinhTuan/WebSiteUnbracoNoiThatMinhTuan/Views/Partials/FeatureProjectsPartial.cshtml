@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
                 <div class="themesflat-headings style-1 text-center clearfix">
-                    <h2 class="heading">HÌNH ẢNH THI CÔNG</h2>
+                    <h2 class="home-heading heading">HÌNH ẢNH THI CÔNG</h2>
                     <div class="sep has-icon width-125 clearfix">
                         <div class="sep-icon">
                             <span class="sep-icon-before sep-center sep-solid"></span>
@@ -31,15 +31,17 @@
                             <div class="project-item villa">
                                 <div class="inner">
                                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
-                                        @if (projectDetail.PageMainImage != null)
-                                        {
-                                            <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
-                                        }
-                                        else
-                                        {
-                                            <img src="/themeassets/not-available.png" />
-                                        }
+                                        <a href="@projectDetail.Url">
+                                            @if (projectDetail.PageMainImage != null)
+                                            {
+                                                <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                            }
+                                            else
+                                            {
+                                                <img src="/themeassets/not-available.png" />
+                                            }
 
+                                        </a>
                                     </div>
                                     <div class="text-wrap">
                                         <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
@@ -52,7 +54,7 @@
                 
                 <div class="themesflat-spacer clearfix" data-desktop="41" data-mobile="35" data-smobile="35"></div>
                 <div class="elm-button text-center">
-                    <a href="~/projects" class="themesflat-button bg-accent">TẤT CẢ</a>
+                    <a href="~/projects" class="themesflat-button bg-accent">XEM THÊM</a>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60"></div>
             </div><!-- /.col-md-12 -->

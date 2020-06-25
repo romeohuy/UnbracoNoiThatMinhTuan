@@ -23,8 +23,8 @@ namespace Umbraco.NoiThat.Core.ServicesMail
                 var frommail = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["NTMTMail"]);
                 var Pass = System.Configuration.ConfigurationManager.AppSettings["EmailPass"];
                 var tomail = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["NTMTSupport"]);
-                string Title = "You have Message from NTMT";
-                string Message = " Name: " + model.Name + " Phone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nNoi Dung: " + model.Message;
+                string Title = "Liên hệ từ website Noithatmth.vn";
+                string Message = " Họ tên: " + model.Name + " Phone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nNội dung liên hệ: " + model.Message;
                 var smtp = new System.Net.Mail.SmtpClient()
                 {
                     Host = "smtp.gmail.com",

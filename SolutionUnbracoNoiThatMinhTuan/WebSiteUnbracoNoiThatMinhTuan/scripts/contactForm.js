@@ -15,6 +15,7 @@
     showResultSuccess: function() {
         $('#form-outer').hide('slow');
         $('#form-result').show('slow');
+        window.reload();
     },
     showResultFailed: function() {       
         $('#form-result').show('slow');

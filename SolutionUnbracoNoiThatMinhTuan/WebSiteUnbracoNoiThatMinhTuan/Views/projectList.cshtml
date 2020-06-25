@@ -12,7 +12,7 @@
 }
 @* the fun starts here *@
 
-@section FeaturedTitleBlock{
+@*@section FeaturedTitleBlock{
     <!-- Featured Title -->
     <div id="featured-title" class="featured-title clearfix">
         <div id="featured-title-inner" class="container clearfix">
@@ -35,14 +35,29 @@
         </div><!-- /#featured-title-inner -->
     </div>
     <!-- End Featured Title -->
-}
+}*@
+
+<div class="themesflat-headings style-1 text-center clearfix">
+    <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
+    <h2 class="home-heading heading">@Model.PageTitle</h2>
+    <div class="sep has-icon width-125 clearfix">
+        <div class="sep-icon">
+            <span class="sep-icon-before sep-center sep-solid"></span>
+            <span class="icon-wrap"><i class="autora-icon-build"></i></span>
+            <span class="sep-icon-after sep-center sep-solid"></span>
+        </div>
+    </div>
+
+</div>
 <!-- PROJECT -->
 <div class="row-project clearfix">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
-                <div class="position-relative">
+                @{
+                    var projectDetails = projectDetailList as ProjectDetail[] ?? projectDetailList.ToArray();
+                }
+                @*<div class="position-relative">
                    
                     <ul class="themesflat-filter style-1 filter-absolute clearfix">
 
@@ -62,24 +77,26 @@
                         }
 
                     </ul>
-                </div>
+                </div>*@
                 <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
                 <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
-                    @foreach (var projectDetail in projectDetails.Where(_=>_ != null))
+                    @foreach (var projectDetail in projectDetails.Where(_ => _ != null))
                     {
-                        var categoryName = string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString));//projectDetail.CategoriesDropdownList != null ? string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString)) : string.Empty;
+                        var categoryName = string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString)); //projectDetail.CategoriesDropdownList != null ? string.Join(" ", projectDetail.CategoriesDropdownList.Where(_ => string.IsNullOrEmpty(_) == false).Select(StringHelpers.RemoveSign4VietnameseString)) : string.Empty;
 
                         <div class="project-item @categoryName villa">
                             <div class="inner">
                                 <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
-                                    @if (projectDetail.PageMainImage != null)
-                                    {
-                                        <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
-                                    }else
-                                    {
-                                        <img src = "/themeassets/not-available.png" />
-                                    }
-                                   
+                                    <a href="@projectDetail.Url">
+                                        @if (projectDetail.PageMainImage != null)
+                                        {
+                                            <img src="@projectDetail.PageMainImage.Url" alt="@projectDetail.PageTitle">
+                                        }
+                                        else
+                                        {
+                                            <img src="/themeassets/not-available.png"/>
+                                        }
+                                    </a>
                                 </div>
                                 <div class="text-wrap">
                                     <h5 class="heading"><a href="@projectDetail.Url">@projectDetail.PageTitle</a></h5>
