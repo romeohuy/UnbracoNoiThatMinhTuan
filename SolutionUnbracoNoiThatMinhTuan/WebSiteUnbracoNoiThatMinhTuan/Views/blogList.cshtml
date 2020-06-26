@@ -2,12 +2,12 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Blogs>
 @{
     Layout = "masterPageBlogs.cshtml";
-    // Page.Title = Model.PageTitle;
+    // Page.Title = Model.PageTitle + " - " + "Nội Thất MTH";
     //  Page.Description = Model.MetaDescription;
 }
 @{
     var BlogList = Model.Children.Cast<BlogDetail>();
-    Page.Title = Model.PageTitle;
+    Page.Title = Model.PageTitle + " - " + "Nội Thất MTH";
     Page.MetaDescription = Model.MetaDescription;
     Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
 

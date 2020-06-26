@@ -2,7 +2,9 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.AboutUs>
 @{
     Layout = "masterPage.cshtml";
-
+    Page.Title = Model.PageTitle + " - " + "Nội Thất MTH";
+    Page.MetaDescription = Model.MetaDescription;
+    Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
 }
 
 @*@section FeaturedTitleBlock{

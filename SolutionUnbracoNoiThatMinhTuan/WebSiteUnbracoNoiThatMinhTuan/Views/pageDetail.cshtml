@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.NoiThat.Core.Page>
 @{
     Layout = "masterPage.cshtml";
-    Page.Title = Model.PageTitle;
+    Page.Title = Model.PageTitle + " - " + "Nội Thất MTH";
     Page.MetaDescription = Model.MetaDescription;
     Page.MetaKeywords = (Model.MetaKeywords != null) ? string.Join(", ", Model.MetaKeywords.ToList()) : string.Empty;
     Page.MainImageUrl = (Model.PageMainImage != null) ? Model.PageMainImage.Url : string.Empty;

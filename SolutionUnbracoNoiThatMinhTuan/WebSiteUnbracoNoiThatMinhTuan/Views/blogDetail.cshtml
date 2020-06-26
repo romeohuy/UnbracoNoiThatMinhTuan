@@ -8,7 +8,7 @@
 
 @{
     var BlogList = Model.Parent<Blogs>().Children.Cast<BlogDetail>();
-    Page.Title = Model.BlogDeatilTitle;
+    Page.Title = Model.BlogDeatilTitle + " - " + "Nội Thất MTH";
     Page.MetaDescription = Model.MetaDescription;
     Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
 }

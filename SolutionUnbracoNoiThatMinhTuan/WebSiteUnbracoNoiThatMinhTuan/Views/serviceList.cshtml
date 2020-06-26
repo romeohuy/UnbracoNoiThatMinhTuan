@@ -2,41 +2,114 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Services>
 @{
     Layout = "masterPage.cshtml";
-    Page.Title = Model.PageTitle;
+    Page.Title = Model.PageTitle + " - " + "Nội Thất MTH";
     Page.MetaDescription = Model.MetaDescription;
     Page.MetaKeywords = string.Join(", ", Model.MetaKeywords.ToList());
+    Page.BodyTagCss = "site-header-absolute";
 }
 
 @* the fun starts here *@
 @{
-    var serviceDetails = Model.Children.Cast<ServiceDetail>();
+    var serviceDetails = Model.Children.Cast<ServiceDetail>().ToList();
+    var pageSize = 12;
+
+    var page = 1;
+    int.TryParse(Request.QueryString["page"], out page);
+    var totalPages = (int)Math.Ceiling((double)serviceDetails.Count() / (double)pageSize);
+
+    if (page > totalPages)
+    {
+        page = totalPages;
+    }
+    else if (page < 1)
+    {
+        page = 1;
+    }
 
 }
 
 @*@section FeaturedTitleBlock{
-    <!-- Featured Title -->
-    <div id="featured-title" class="featured-title clearfix">
-        <div id="featured-title-inner" class="container clearfix">
-            <div class="featured-title-inner-wrap">
-                <div id="breadcrumbs">
-                    <div class="breadcrumbs-inner">
-                        <div class="breadcrumb-trail">
-                            <a href="~/" class="trail-begin">Home</a>
-                            <span class="sep">|</span>
-                            <span class="trail-end">Công trình thiết kế</span>
+        <!-- Featured Title -->
+        <div id="featured-title" class="featured-title clearfix">
+            <div id="featured-title-inner" class="container clearfix">
+                <div class="featured-title-inner-wrap">
+                    <div id="breadcrumbs">
+                        <div class="breadcrumbs-inner">
+                            <div class="breadcrumb-trail">
+                                <a href="~/" class="trail-begin">Home</a>
+                                <span class="sep">|</span>
+                                <span class="trail-end">Công trình thiết kế</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="featured-title-heading-wrap">
-                    <h1 class="feautured-title-heading">
-                        Công trình thiết kế
-                    </h1>
-                </div>
-            </div><!-- /.featured-title-inner-wrap -->
-        </div><!-- /#featured-title-inner -->
+                    <div class="featured-title-heading-wrap">
+                        <h1 class="feautured-title-heading">
+                            Công trình thiết kế
+                        </h1>
+                    </div>
+                </div><!-- /.featured-title-inner-wrap -->
+            </div><!-- /#featured-title-inner -->
+        </div>
+        <!-- End Featured Title -->
+    }*@
+
+@if (Model.PageMainImage != null)
+{
+
+    <!-- SLIDER -->
+    <div class="rev_slider_wrapper fullwidthbanner-container">
+        <div id="rev-slider2" class="rev_slider fullwidthabanner">
+            <ul>
+                <!-- Slide 1 -->
+                <li data-transition="random">
+                    <!-- Main Image -->
+                    <img src="@Model.PageMainImage.Url" alt="" data-bgposition="center center" data-no-retina>
+
+                    <!-- Layers -->
+                    <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 "
+                         data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-90']"
+                         data-fontsize="['20','20','20','16']"
+                         data-lineheight="['70','70','40','24']"
+                         data-width="full"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-transform_idle="o:1;"
+                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                         data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                         data-mask_in="x:0px;y:[100%];"
+                         data-mask_out="x:inherit;y:inherit;"
+                         data-start="700"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on">
+                        @*@slide.SlideTitle*@
+                    </div>
+
+                    <div class="tp-caption "
+                         data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['153','153','153','153']"
+                         data-width="full"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-transform_idle="o:1;"
+                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                         data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                         data-mask_in="x:0px;y:[100%];"
+                         data-mask_out="x:inherit;y:inherit;"
+                         data-start="1000"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on">
+                        @*<a href="@slide.SlideLinkToUrl" class="themesflat-button bg-accent big"><span>CHI TIẾT</span></a>*@
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <!-- End Featured Title -->
-}*@
+    <!-- END SLIDER -->
+
+}
 <div class="themesflat-headings style-1 text-center clearfix">
     <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="35" data-smobile="35"></div>
     <h2 class="home-heading heading">@Model.PageTitle</h2>
@@ -55,7 +128,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix">
-                    @foreach (var serviceDetail in serviceDetails)
+                    @foreach (var serviceDetail in serviceDetails.Skip((page - 1) * pageSize).Take(pageSize))
                     {
                         <div class="project-item villa green">
                             <div class="inner">
@@ -67,7 +140,7 @@
                                         }
                                         else
                                         {
-                                            <img src = "/themeassets/not-available.png" />
+                                            <img src="/themeassets/not-available.png" />
                                         }
                                     </a>
                                 </div>
@@ -80,8 +153,77 @@
                     }
                 </div><!-- /.themesflat-project -->
 
-                <div class="themesflat-spacer clearfix" data-desktop="72" data-mobile="60" data-smobile="60"></div>
+                <div class="themesflat-spacer clearfix" data-desktop="20" data-mobile="20" data-smobile="20"></div>
+
             </div><!-- /.col-md-12 -->
+            <div class="col-md-12 text-xl-center">
+                @{
+
+                    if (totalPages > 1)
+                    {
+                        @*<nav>
+                                <ul class="pager">
+                                    <li class="pager__item pager__item--prev"><a class="pager__link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="#33313C" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z"></path>
+                                            </g>
+                                        </svg></a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">...</a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">1</a></li>
+                                    <li class="pager__item active"><a class="pager__link" href="#">2</a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">3</a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">4</a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">5</a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">6</a></li>
+                                    <li class="pager__item"><a class="pager__link" href="#">...</a></li>
+                                    <li class="pager__item pager__item--next"><a class="pager__link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="#33313C" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z"></path>
+                                            </g>
+                                        </svg></a></li>
+                                </ul>
+                            </nav>*@
+
+                        <nav class="pagination">
+                            <ul class="pager">
+                                @if (page > 1)
+                                {
+                                    <li class="pager__item">
+                                        <a class="pager__link" href="?page=@(page-1)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#33313C" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                }
+                                @for (int p = 1; p < totalPages + 1; p++)
+                                {
+                                    <li class="pager__item @(p == page ? "active" : string.Empty)">
+                                        <a class="pager__link" href="?page=@p">@p</a>
+                                    </li>
+                                }
+                                @if (page < totalPages)
+                                {
+                                    <li class="pager__item pager__item--next">
+                                        <a class="pager__link" href="?page=@(page+1)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#33313C" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    }
+                }
+                <div class="themesflat-spacer clearfix" data-desktop="20" data-mobile="20" data-smobile="20"></div>
+            </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div>
